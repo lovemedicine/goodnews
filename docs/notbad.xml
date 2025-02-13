@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title><![CDATA[The New Dark Times]]></title>
+        <title><![CDATA[The New Dark Times - notbad]]></title>
         <description><![CDATA[All the news that's fit to print, minus the sad stuff]]></description>
         <link>https://lovemedicine.github.io/goodnews</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 13 Feb 2025 15:45:31 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 13 Feb 2025 16:05:32 GMT</lastBuildDate>
         <atom:link href="https://lovemedicine.github.io/goodnews/notbad.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Thu, 13 Feb 2025 15:34:31 GMT</pubDate>
+        <pubDate>Thu, 13 Feb 2025 15:53:52 GMT</pubDate>
         <language><![CDATA[en]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[James Howells’s Final Proposal to Recover Lost Bitcoin: Buying the Landfill]]></title>
+            <description><![CDATA[For 12 years, James Howells has begged officials to let him dig through a South Wales landfill to find a lost Bitcoin wallet that he says is worth around $800 million.]]></description>
+            <link>https://archive.is/2025/https://www.nytimes.com/2025/02/13/world/europe/bitcoin-wales-james-howells-landfill.html</link>
+            <guid isPermaLink="false">https://www.nytimes.com/2025/02/13/world/europe/bitcoin-wales-james-howells-landfill.html</guid>
+            <dc:creator><![CDATA[New York Times]]></dc:creator>
+            <pubDate>Thu, 13 Feb 2025 15:53:52 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Denver’s public school system sues Trump administration over Ice access to schools]]></title>
             <description><![CDATA[<p>School district says expanded immigration enforcement diverts resources and causes decreased attendance</p><p>The <a href="https://www.theguardian.com/us-news/denver">Denver</a> public school system (DPS) on Wednesday became the first US school district to sue the <a href="https://www.theguardian.com/us-news/trump-administration">Trump administration</a> over its policy of allowing Immigration and Customs Enforcement (Ice) agents in schools.</p><p><a href="https://www.theguardian.com/us-news/colorado">Colorado</a>’s largest public school district argues in the federal lawsuit that the policy has forced schools to divert vital educational resources and caused attendance to plummet.</p> <a href="https://www.theguardian.com/us-news/2025/feb/13/denver-trump-ice-lawsuit-schools">Continue reading...</a>]]></description>
@@ -40,14 +48,6 @@
             <guid isPermaLink="false">https://www.theguardian.com/football/2025/feb/13/usl-division-i-league-mls-paul-mcdonough</guid>
             <dc:creator><![CDATA[The Guardian]]></dc:creator>
             <pubDate>Thu, 13 Feb 2025 14:45:39 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Czech Dam Project Was Stalled by Bureaucracy. Beavers Built Their Own.]]></title>
-            <description><![CDATA[The dam project, drafted in 2018 and based on a former military training site south of Prague, had been delayed by land negotiations. Local beavers built several dams, saving the government more than one million euros.]]></description>
-            <link>https://archive.is/2025/https://www.nytimes.com/2025/02/12/world/europe/beavers-prague-czech-republic-dam.html</link>
-            <guid isPermaLink="false">https://www.nytimes.com/2025/02/12/world/europe/beavers-prague-czech-republic-dam.html</guid>
-            <dc:creator><![CDATA[New York Times]]></dc:creator>
-            <pubDate>Thu, 13 Feb 2025 14:31:39 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[London’s first Roman basilica found under office block]]></title>

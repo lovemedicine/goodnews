@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title><![CDATA[The New Dark Times]]></title>
+        <title><![CDATA[The New Dark Times - good]]></title>
         <description><![CDATA[All the news that's fit to print, minus the sad stuff]]></description>
         <link>https://lovemedicine.github.io/goodnews</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 13 Feb 2025 15:45:31 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 13 Feb 2025 16:05:32 GMT</lastBuildDate>
         <atom:link href="https://lovemedicine.github.io/goodnews/good.xml" rel="self" type="application/rss+xml"/>
         <pubDate>Thu, 13 Feb 2025 15:34:31 GMT</pubDate>
         <language><![CDATA[en]]></language>
@@ -24,14 +24,6 @@
             <guid isPermaLink="false">https://www.theguardian.com/us-news/2025/feb/13/nursing-home-patients-insurance</guid>
             <dc:creator><![CDATA[The Guardian]]></dc:creator>
             <pubDate>Thu, 13 Feb 2025 15:30:41 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Czech Dam Project Was Stalled by Bureaucracy. Beavers Built Their Own.]]></title>
-            <description><![CDATA[The dam project, drafted in 2018 and based on a former military training site south of Prague, had been delayed by land negotiations. Local beavers built several dams, saving the government more than one million euros.]]></description>
-            <link>https://archive.is/2025/https://www.nytimes.com/2025/02/12/world/europe/beavers-prague-czech-republic-dam.html</link>
-            <guid isPermaLink="false">https://www.nytimes.com/2025/02/12/world/europe/beavers-prague-czech-republic-dam.html</guid>
-            <dc:creator><![CDATA[New York Times]]></dc:creator>
-            <pubDate>Thu, 13 Feb 2025 14:31:39 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Hamas Signals Progress Toward Resumed Hostage Releases]]></title>
@@ -214,6 +206,14 @@
             <guid isPermaLink="false">https://www.theguardian.com/us-news/2025/feb/12/malcolm-x-visit-smethwick-midlands-60th-anniversary-mural</guid>
             <dc:creator><![CDATA[The Guardian]]></dc:creator>
             <pubDate>Wed, 12 Feb 2025 18:53:14 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[New inflation numbers are at odds with Donald Trump’s promise to lower prices]]></title>
+            <description><![CDATA[<p>The president repeatedly claimed he would lower prices during the election campaign, but that’s not an easy task</p><ul><li><a href="https://www.theguardian.com/business/2025/feb/12/trump-january-inflation">Inflation gains speed despite Trump vow to ‘rapidly’ cut prices</a></li></ul><p>As tens of millions of Americans prepared to watch the Super Bowl this weekend, <a href="https://www.theguardian.com/us-news/donaldtrump">Donald Trump</a> sat for the customary pre-game presidential interview.</p><p>Trump was elected after pledging to bring down prices fast as much of the country grappled with the cost of living after years of heightened inflation. So when the Fox News anchor asked would families start to feel the impact, the president changed the subject.</p> <a href="https://www.theguardian.com/business/2025/feb/12/prices-higher-trump-inflation">Continue reading...</a>]]></description>
+            <link>https://archive.is/2025/https://www.theguardian.com/business/2025/feb/12/prices-higher-trump-inflation</link>
+            <guid isPermaLink="false">https://www.theguardian.com/business/2025/feb/12/prices-higher-trump-inflation</guid>
+            <dc:creator><![CDATA[The Guardian]]></dc:creator>
+            <pubDate>Wed, 12 Feb 2025 16:26:39 GMT</pubDate>
         </item>
     </channel>
 </rss>
