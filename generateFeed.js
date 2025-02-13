@@ -16,7 +16,7 @@ export async function generateFeed(name, labels) {
   );
 
   const feed = new RSS({
-    title: "The New Dark Times",
+    title: `The New Dark Times - ${name}`,
     description: "All the news that's fit to print, minus the sad stuff",
     feed_url: `https://lovemedicine.github.io/goodnews/${name}.xml`,
     site_url: "https://lovemedicine.github.io/goodnews",
