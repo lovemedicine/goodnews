@@ -36,31 +36,15 @@ async function ensureFeeds() {
   }
 }
 
-async function getAllFeeds() {
+export async function getAllFeeds() {
   await ensureFeeds();
   return await Feed.findAll();
 }
 
-async function updateLastPublished(url, dateTime) {
-  return await Feed.update({ last_published_at: dateTime }, { where: { url } });
-}
-
-export async function fetchArticles() {
-  let articles = [];
-  const feeds = await getAllFeeds();
-
-  for (let i = 0; i < feeds.length; i++) {
-    const { id, url, last_published_at } = feeds[i];
-    const parsedFeed = await parser.parseURL(url);
-    const newArticles = parsedFeed.items
-      .filter((item) => item.isoDate > (last_published_at || ""))
-      .map((article) => ({ ...article, feedId: id }));
-    articles = articles.concat(newArticles);
-
-    if (newArticles.length > 0) {
-      await updateLastPublished(url, newArticles[0].isoDate);
-    }
-  }
-
-  return articles;
+export async function fetchNewArticles(feed) {
+  const { id, url, last_published_at } = feed;
+  const parsedFeed = await parser.parseURL(url);
+  return parsedFeed.items
+    .filter((item) => item.isoDate > (last_published_at || ""))
+    .map((article) => ({ ...article, feedId: id }));
 }

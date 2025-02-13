@@ -5,6 +5,7 @@ new sqlite3.Database("goodnews.db");
 const sequelize = new Sequelize({
   dialect: "sqlite",
   storage: "goodnews.db",
+  logging: false,
 });
 
 export const Feed = sequelize.define(
@@ -38,6 +39,10 @@ export const Article = sequelize.define(
       allowNull: false,
     },
     description: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    author: {
       type: DataTypes.STRING,
       allowNull: true,
     },

@@ -29,9 +29,9 @@ export async function generateFeed() {
     feed.item({
       title: article.title,
       description: article.description,
-      url: article.url,
+      url: `https://archive.is/2025/${article.url}`,
       date: article.published_at,
-      author: article.Feed.name,
+      author: article.creator || article.Feed.name,
       guid: article.url,
     });
   });

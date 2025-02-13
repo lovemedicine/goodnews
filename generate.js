@@ -1,19 +1,7 @@
-import { labelTexts } from "./labelTexts.js";
-import { fetchArticles } from "./fetchArticles.js";
+import { labelTextWithGemini } from "./labelTexts.js";
+import { getAllFeeds, fetchNewArticles } from "./fetchArticles.js";
 import { Article, Feed } from "./db.js";
 import { generateFeed } from "./generateFeed.js";
-
-async function labelArticles(articles, method) {
-  const texts = articles.map(
-    (article) => article.title + ". " + article.description
-  );
-  const labels = await labelTexts(texts, method);
-
-  return articles.map((article, i) => {
-    article.label = labels[i];
-    return article;
-  });
-}
 
 async function findArticle({ guid }) {
   return await Article.findOne({ where: { url: guid } });
@@ -23,6 +11,7 @@ async function saveArticle({
   guid,
   title,
   description,
+  creator,
   label,
   isoDate,
   feedId,
@@ -31,6 +20,7 @@ async function saveArticle({
     url: guid,
     title,
     description,
+    author: creator,
     label,
     published_at: isoDate,
   });
@@ -41,40 +31,41 @@ async function saveArticle({
   return article;
 }
 
-async function saveArticles(articles) {
-  for (let i = 0; i < articles.length; i++) {
-    const article = articles[i];
+async function updateLastPublished(feed, dateTime) {
+  return await Feed.update(
+    { last_published_at: dateTime },
+    { where: { url: feed.url } }
+  );
+}
 
-    if (!(await findArticle(article))) {
+const feeds = await getAllFeeds();
+
+for (let i = 0; i < feeds.length; i++) {
+  const feed = feeds[i];
+  console.log("*******************");
+  console.log(`processing ${feed.url}`);
+  const articles = await fetchNewArticles(feed);
+  console.log(`found ${articles.length} new articles`);
+
+  for (let j = 0; j < articles.length; j++) {
+    let article = articles[j];
+    console.log("*******************");
+    console.log(`${j + 1} / ${articles.length}`);
+
+    if (await findArticle(article)) {
+      console.log(`skipping ${article.link}`);
+    } else {
+      const text = article.title + ". " + article.description;
+      article.label = await labelTextWithGemini(text);
       await saveArticle(article);
+      console.log(text);
+      console.log(article.label);
     }
   }
-}
 
-const method = process.argv[2] || undefined;
-const articles = await fetchArticles();
-const newArticles = [];
-
-for (let i = 0; i < articles.length; i++) {
-  const article = articles[i];
-
-  if (!(await findArticle(article))) {
-    newArticles.push(article);
+  if (articles.length > 0) {
+    await updateLastPublished(feed, articles[0].isoDate);
   }
 }
-
-console.log(`found ${newArticles.length} new articles`);
-const labeledArticles = await labelArticles(newArticles, method);
-
-// labeledArticles.forEach((article) => {
-//   console.log("---------------");
-//   console.log(article.title);
-//   console.log(article.description);
-//   console.log(article.link);
-//   console.log(article.isoDate);
-//   console.log(article.label);
-// });
-
-await saveArticles(labeledArticles);
 
 await generateFeed();
