@@ -4,11 +4,93 @@
         <description><![CDATA[All the news that's fit to print, minus the sad stuff]]></description>
         <link>https://thegoodnews.tiiny.site</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 12 Feb 2025 16:47:24 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 13 Feb 2025 01:23:19 GMT</lastBuildDate>
         <atom:link href="https://thegoodnews.tiiny.site/goodnews.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Wed, 12 Feb 2025 16:13:42 GMT</pubDate>
+        <pubDate>Thu, 13 Feb 2025 00:45:31 GMT</pubDate>
         <language><![CDATA[en]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[Czech Dam Project Was Stalled by Bureaucracy. Beavers Built Their Own.]]></title>
+            <description><![CDATA[The dam project, drafted in 2018 and based on a former military training site south of Prague, had been delayed by land negotiations. Local beavers built several dams, saving the government more than one million euros.]]></description>
+            <link>https://www.nytimes.com/2025/02/12/world/europe/czech-dam-project-was-stalled-by-bureaucracy-beavers-built-their-own.html</link>
+            <guid isPermaLink="false">https://www.nytimes.com/2025/02/12/world/europe/czech-dam-project-was-stalled-by-bureaucracy-beavers-built-their-own.html</guid>
+            <dc:creator><![CDATA[nyt-world]]></dc:creator>
+            <pubDate>Thu, 13 Feb 2025 00:45:31 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Austrian Coalition Talks Collapse, Averting, for Now, a Far-Right Chancellor]]></title>
+            <description><![CDATA[The plan by the far-right Freedom Party to run Austria was halted by a disagreement over who would lead the all-important Interior Ministry.]]></description>
+            <link>https://www.nytimes.com/2025/02/12/world/europe/austria-coalition-talks-far-right-chancellor.html</link>
+            <guid isPermaLink="false">https://www.nytimes.com/2025/02/12/world/europe/austria-coalition-talks-far-right-chancellor.html</guid>
+            <dc:creator><![CDATA[nyt-world]]></dc:creator>
+            <pubDate>Thu, 13 Feb 2025 00:43:01 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Maria Teresa Horta, the Last of Portugal’s ‘Three Marias,’ Dies at 87]]></title>
+            <description><![CDATA[The book on which she collaborated with two fellow feminists drew global attention to the repression of women under their country’s dictatorship.]]></description>
+            <link>https://www.nytimes.com/2025/02/11/world/europe/maria-teresa-horta-dead.html</link>
+            <guid isPermaLink="false">https://www.nytimes.com/2025/02/11/world/europe/maria-teresa-horta-dead.html</guid>
+            <dc:creator><![CDATA[nyt-world]]></dc:creator>
+            <pubDate>Wed, 12 Feb 2025 22:16:20 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[California’s Scary Product Warning Labels Might Be Working, Study Says]]></title>
+            <description><![CDATA[Products must state if they contain chemicals tied to cancer or other risks. As a result, manufacturers have pulled back from using the chemicals, researchers found.]]></description>
+            <link>https://www.nytimes.com/2025/02/12/climate/california-chemical-warning-labels.html</link>
+            <guid isPermaLink="false">https://www.nytimes.com/2025/02/12/climate/california-chemical-warning-labels.html</guid>
+            <dc:creator><![CDATA[nyt-world]]></dc:creator>
+            <pubDate>Wed, 12 Feb 2025 22:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Lawsuit Seeks Access to Migrants Held at Guantanamo Bay]]></title>
+            <description><![CDATA[Advocacy groups say the Trump administration is denying detainees their legal rights.]]></description>
+            <link>https://www.wsj.com/us-news/law/lawsuit-seeks-access-to-migrants-held-at-guantanamo-bay-2d6ad874</link>
+            <guid isPermaLink="false">https://www.wsj.com/us-news/law/lawsuit-seeks-access-to-migrants-held-at-guantanamo-bay-2d6ad874</guid>
+            <dc:creator><![CDATA[wsj-us]]></dc:creator>
+            <pubDate>Wed, 12 Feb 2025 21:56:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Pentagon Official: Hegseth’s Campaign to Scrub DEI History Is a “Dumb” Distraction]]></title>
+            <description><![CDATA[<p>Defense Secretary Pete Hegseth is trying to eliminate all Defense Department DEI efforts. It hasn’t been entirely successful.</p>
+<p>The post <a href="https://theintercept.com/2025/02/12/pete-hegseth-military-trump-diversity/">Pentagon Official: Hegseth’s Campaign to Scrub DEI History Is a “Dumb” Distraction</a> appeared first on <a href="https://theintercept.com">The Intercept</a>.</p>
+]]></description>
+            <link>https://theintercept.com/2025/02/12/pete-hegseth-military-trump-diversity/</link>
+            <guid isPermaLink="false">https://theintercept.com/2025/02/12/pete-hegseth-military-trump-diversity/</guid>
+            <dc:creator><![CDATA[intercept]]></dc:creator>
+            <pubDate>Wed, 12 Feb 2025 21:18:57 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Belarus frees three detainees including US citizen and journalist]]></title>
+            <description><![CDATA[<p>Journalist with US-funded broadcaster among those in release hailed by ambassador as ‘big day for team America’</p><p><a href="https://www.theguardian.com/world/belarus">Belarus</a> has released three detainees including a veteran journalist for a US government-funded broadcaster and a US citizen, the White House said on Wednesday.</p><p>The White House press secretary, Karoline Leavitt, confirmed the release on Wednesday of three people including “one American and two individuals from Belarus, one of whom worked for Radio Liberty”. The released American has not been identified.</p> <a href="https://www.theguardian.com/world/2025/feb/12/belarus-prisoner-release-andrey-kuznechyk">Continue reading...</a>]]></description>
+            <link>https://www.theguardian.com/world/2025/feb/12/belarus-prisoner-release-andrey-kuznechyk</link>
+            <guid isPermaLink="false">https://www.theguardian.com/world/2025/feb/12/belarus-prisoner-release-andrey-kuznechyk</guid>
+            <dc:creator><![CDATA[guardian-us]]></dc:creator>
+            <pubDate>Wed, 12 Feb 2025 21:01:40 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Belarus Frees an American and 2 Others as It Tries to Thaw Relations]]></title>
+            <description><![CDATA[Aleksandr G. Lukashenko, Belarus’s autocratic president and Russia’s closest ally, has taken steps to soften his country’s isolation from the West.]]></description>
+            <link>https://www.nytimes.com/2025/02/12/world/europe/belarus-prisoner-release.html</link>
+            <guid isPermaLink="false">https://www.nytimes.com/2025/02/12/world/europe/belarus-prisoner-release.html</guid>
+            <dc:creator><![CDATA[nytimes-homepage]]></dc:creator>
+            <pubDate>Wed, 12 Feb 2025 20:32:25 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Malcolm X’s visit to West Midlands to be remembered in mural]]></title>
+            <description><![CDATA[<p>Street art will mark 60 years since US civil rights leader’s trip to Smethwick shortly before his assassination</p><p>It was a moment that united the US civil rights movement with the anti-racist movement in Britain, helping to change the country – and to mark its 60th anniversary it will be commemorated with a mural.</p><p>On 12 February 1965, the black American activist Malcolm X visited Smethwick, in the West Midlands after what is remembered as <a href="https://www.theguardian.com/world/2014/oct/15/britains-most-racist-election-smethwick-50-years-on">the most racist election campaign the UK has ever seen</a>.</p> <a href="https://www.theguardian.com/us-news/2025/feb/12/malcolm-x-visit-smethwick-midlands-60th-anniversary-mural">Continue reading...</a>]]></description>
+            <link>https://www.theguardian.com/us-news/2025/feb/12/malcolm-x-visit-smethwick-midlands-60th-anniversary-mural</link>
+            <guid isPermaLink="false">https://www.theguardian.com/us-news/2025/feb/12/malcolm-x-visit-smethwick-midlands-60th-anniversary-mural</guid>
+            <dc:creator><![CDATA[guardian-us]]></dc:creator>
+            <pubDate>Wed, 12 Feb 2025 18:53:14 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[New inflation numbers are at odds with Donald Trump’s promise to lower prices]]></title>
+            <description><![CDATA[<p>The president repeatedly claimed he would lower prices during the election campaign, but that’s not an easy task</p><ul><li><a href="https://www.theguardian.com/business/2025/feb/12/trump-january-inflation">Inflation gains speed despite Trump vow to ‘rapidly’ cut prices</a></li></ul><p>As tens of millions of Americans prepared to watch the Super Bowl this weekend, <a href="https://www.theguardian.com/us-news/donaldtrump">Donald Trump</a> sat for the customary pre-game presidential interview.</p><p>Trump was elected after pledging to bring down prices fast as much of the country grappled with the cost of living after years of heightened inflation. So when the Fox News anchor asked would families start to feel the impact, the president changed the subject.</p> <a href="https://www.theguardian.com/business/2025/feb/12/prices-higher-trump-inflation">Continue reading...</a>]]></description>
+            <link>https://www.theguardian.com/business/2025/feb/12/prices-higher-trump-inflation</link>
+            <guid isPermaLink="false">https://www.theguardian.com/business/2025/feb/12/prices-higher-trump-inflation</guid>
+            <dc:creator><![CDATA[guardian-us]]></dc:creator>
+            <pubDate>Wed, 12 Feb 2025 16:26:39 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Eight inspectors general sue to challenge firings by Trump – live]]></title>
             <description><![CDATA[<p>President dismissed 18 officials within days of taking office, which appears to contradict federal law that requires Congress to have 30 days notice</p><p>Several <strong>Democratic</strong> state attorneys general warned that the country was in the grip of a full-blown constitutional crisis, as they battle <strong><a href="https://www.theguardian.com/us-news/donaldtrump">Donald Trump</a></strong> in court over actions they argue are lawless and in some cases brazenly unconstitutional.</p><p>“We are on the brink of a dictatorship, and America has never been in a more dangerous position than she is today,” Kris Mayes, the attorney general of Arizona, said at a press conference in <a href="https://www.theguardian.com/us-news/los-angeles">Los Angeles</a> on Tuesday.</p> <a href="https://www.theguardian.com/us-news/live/2025/feb/12/trump-musk-modi-tariffs-usaid-us-politics-live-news">Continue reading...</a>]]></description>
@@ -62,22 +144,22 @@
             <description><![CDATA[
                 <p class="byline">
                 by <a class="name" href="https://www.propublica.org/people/robin-fields">Robin Fields</a>                </p>
-                                             
 
-                                                                    
-            
+
+
+
                 <p>ProPublica is a nonprofit newsroom that investigates abuses of power. Sign up to receive <a href="https://www.propublica.org/newsletters/the-big-story?source=54G&amp;placement=top-note&amp;region=national">our biggest stories</a> as soon as they’re published.</p>
 
-            
-
-                
-
-      
-  
 
 
 
-                    
+
+
+
+
+
+
+
 <p data-pp-blocktype="copy" data-pp-id="2.0">Vincent Gaynor remembers, almost to the minute, when he realized his part in birthing the breakthrough gene therapy Zolgensma had ended and the forces that turned it into the world’s most expensive drug had taken over.</p>
 
 <p data-pp-blocktype="copy" data-pp-id="2.1">It was May 2014. He and his wife were sitting in the cafeteria at Nationwide Children’s Hospital in Columbus, Ohio.</p>
@@ -107,29 +189,29 @@
 <p data-pp-blocktype="copy" data-pp-id="2.13">We found that taxpayers and private charities like Sophia’s Cure subsidized much of the science that yielded Zolgensma, providing research grants and opening the door to federal tax credits and other benefits that sped its path to approval.</p>
 
 <p data-pp-blocktype="copy" data-pp-id="2.14">Yet that support came with no conditions — financial or otherwise — for the for-profit companies that brought the drug over the finish line, particularly when it came to pricing.</p>
-        
-    
-                    
 
-    
-        
 
-                        
-                    
-                
+
+
+
+
+
+
+
+
 
             Vincent Gaynor with his daughter Sophia
-    
+
             (Photo courtesy of Vincent Gaynor)
-    
-    
-    
 
-    
 
-        
-    
-                    
+
+
+
+
+
+
+
 <p data-pp-blocktype="copy" data-pp-id="4.0">Once Zolgensma’s potential was clear, early champions like the Gaynors were left behind as the private sector rushed in. AveXis’ top executives and venture-capital backers made tens or hundreds of millions of dollars apiece when the startup was swallowed by the pharmaceutical giant Novartis AG in 2018.</p>
 
 <p data-pp-blocktype="copy" data-pp-id="4.1">Wall Street analysts predicted Novartis’ new prize drug would be the first therapy to smash the million-dollar-a-dose mark. The Swiss colossus crafted a sophisticated campaign to justify more than double that amount, enlisting a team of respected academics, data-modelers and pricing strategists to help make its case.</p>
@@ -158,9 +240,9 @@
 
 
 </p>
-        
-    
-                    
+
+
+
 <p data-pp-blocktype="copy" data-pp-id="7.0">When Vincent and Catherine Gaynor started their married life in 2006, they knew one thing for certain: They wanted children.</p>
 
 <p data-pp-blocktype="copy" data-pp-id="7.1">They learned well into Catherine’s 2008 pregnancy that they were both carriers for SMA, meaning there was a 25% chance their child would be born with the muscle-wasting disorder.</p>
@@ -178,23 +260,23 @@
 <p data-pp-blocktype="copy" data-pp-id="7.7">At the time, there were no treatments to slow or stop SMA. By the time Sophia was 4 months old, she needed a machine to help her breathe overnight. At 6 months, she could no longer take a bottle and needed a feeding tube. Each time she lost ground, their urgency to find a treatment grew.</p>
 
 <p data-pp-blocktype="copy" data-pp-id="7.8">The Gaynors didn’t have deep pockets or wealthy friends. He was a steamfitter with Local 638, from a family of steamfitters. They began raising small amounts of money by hosting golf tournaments and throwing Zumba parties. As the volume of donations grew, they founded Sophia’s Cure, emerging as serious players in the small world of SMA charities.</p>
-        
-    
-                    
 
-    
+
+
+
+
         <p>I learned it’s all about money. It’s not about saving people.</p>
 
-    
-        
+
+
         —Vincent Gaynor, who raised funds for medical research to help his daughter with spinal muscular atrophy
 
-    
-    
 
-        
-    
-                    
+
+
+
+
+
 <p data-pp-blocktype="copy" data-pp-id="9.0">Vincent met Brian Kaspar at a cocktail hour for high-yield fundraisers. Kaspar was among the small group of top researchers working to find treatments for SMA, competing fiercely for recognition and funds. (Kaspar declined an interview request from ProPublica and didn’t respond to written questions.)</p>
 
 <p data-pp-blocktype="copy" data-pp-id="9.1">Because his drug was a gene therapy, public grant money and private philanthropy played an especially central role, with the National Institutes of Health alone <a href="https://www.yahoo.com/news/opinion-why-didn-t-nonprofits-084025378.html">putting over $450 million into science related to SMA</a>. Drug companies at the time approached these treatments with more skepticism, waiting longer to invest and letting universities and academic hospitals do the heavy lifting, said Ameet Sarpatwari, an assistant professor at Harvard Medical School who studies the pharmaceutical industry.</p>
@@ -222,11 +304,11 @@
 <p data-pp-blocktype="copy" data-pp-id="9.12">Kaspar singled out Sophia’s Cure for the extent of its support in a <a href="https://www.nationwidechildrens.org/newsroom/news-releases/2013/01/sophias-cure-foundation-donates-650000-in-2012-to-nationwide-childrens-hospital">Nationwide press release</a>.</p>
 
 <p data-pp-blocktype="copy" data-pp-id="9.13">“Sophia’s Cure Foundation has been the lead funder of this program and their incredible investment in this lab has accelerated our program by many years,” he said.</p>
-        
-    
-                            
-    
-                    
+
+
+
+
+
 <p data-pp-blocktype="copy" data-pp-id="11.0">The trial protocol called for Kaspar’s therapy to be tested on infants up to 9 months old. It was a pragmatic decision: The company had limited funds and capacity to produce the test doses, which would be smaller for children who weighed less. Plus, the youngest children were likely to show the most dramatic results since they’d be treated before SMA inflicted its worst damage.</p>
 
 <p data-pp-blocktype="copy" data-pp-id="11.1">That left out Sophia, as well as most of the kids whose parents made up Gaynor’s fundraising network.</p>
@@ -252,23 +334,23 @@
 <p data-pp-blocktype="copy" data-pp-id="11.11">That’s what the money raised at Avery’s Race would support, Vincent Gaynor said, adding pointedly that his nonprofit would focus on the work others would avoid “because it’s not going to push stock prices up.”</p>
 
 <p data-pp-blocktype="copy" data-pp-id="11.12">Neither Kaspar nor Carbona responded directly to the dig. Carbona, noting the company had other funding needs, said they would expand testing when they had proof the drug worked.</p>
-        
-    
-                    
 
-    
+
+
+
+
         <p>I mean, they all have their hearts in the right place, but they’re being run by people who are looking for a return on investment.</p>
 
-    
-        
+
+
         —John Carbona, former CEO of AveXis
 
-    
-    
 
-        
-    
-                    
+
+
+
+
+
 <p data-pp-blocktype="copy" data-pp-id="13.0">By early 2015, AveXis had raised millions from deep-pocketed biotech investors, adding members of several venture-capital funds to its board. Their participation would be critical in bringing the drug to market, paying for licenses to patented technology needed to make and administer it, for example. It also meant that Zolgensma had to do more than save lives — its promise had to make AveXis’ investors a profit.</p>
 
 <p data-pp-blocktype="copy" data-pp-id="13.1">Almost immediately, Carbona said, the board pushed to take the company public.</p>
@@ -280,33 +362,33 @@
 <p data-pp-blocktype="copy" data-pp-id="13.4">Later that year, the board replaced Carbona with a new chief executive, Sean P. Nolan, who had a decadeslong record at pharmaceutical and biotech companies.</p>
 
 <p data-pp-blocktype="copy" data-pp-id="13.5">In September, a company representative offered the Gaynors a meeting with Nolan, saying Kaspar had stressed how instrumental Sophia’s Cure had been to the work on the drug. The Gaynors traveled into Manhattan for the meeting at a hotel bar. They told Nolan about their concerns, including that older kids wouldn’t have access to Kaspar’s drug since it hadn’t been tested on them. They said Nolan was cordial but never followed up. (Nolan didn’t respond to emailed questions from ProPublica.)</p>
-        
-    
-                    
 
-    
-        
 
-    
-        
-            
-            
-            
+
+
+
+
+
+
+
+
+
+
 
             Nasdaq posted a video to Facebook with the caption, “Getting ready to ring the #Nasdaq opening bell with AveXis, Inc!”
-    
+
             (Excerpt from archived live video clip obtained from Nasdaq/Facebook)
-    
-    
-    
+
+
+
 
             <p><strong><a href="https://assets-d.propublica.org/v5/video/zolgensma-smaller.mp4">Watch video ➜</a></strong></p>
-        
-    
-    
-        
-    
-                    
+
+
+
+
+
+
 <p data-pp-blocktype="copy" data-pp-id="15.0">Early the following year, AveXis went public. Nolan celebrated by <a href="https://www.facebook.com/share/v/18MSbEm1HC/">ringing the NASDAQ opening bell</a> as Kaspar, other company executives and members of the board whooped and clapped.</p>
 
 <p data-pp-blocktype="copy" data-pp-id="15.1">The IPO and subsequent stock sales raised hundreds of millions of dollars, but little of the money went toward additional trials on Zolgensma, an analysis by KEI, the public advocacy group, concluded.</p>
@@ -322,11 +404,11 @@
 <p data-pp-blocktype="copy" data-pp-id="15.6">Sophia’s Cure sued Kaspar, Carbona, Nolan, AveXis, Nationwide Children’s Hospital and its affiliated research institute and foundation for breach of contract. They’d relied on the charity’s money to advance the treatment, the lawsuit alleged, then violated the terms of donation agreements by cutting it out of credit and ownership rights once the drug was headed for success. The suit sought damages of $500 million.</p>
 
 <p data-pp-blocktype="copy" data-pp-id="15.7">Many larger disease foundations have launched <a href="https://www.nytimes.com/2014/11/19/business/for-cystic-fibrosis-foundation-venture-yields-windfall-in-hope-and-cash.html">venture philanthropy</a> programs that <a href="https://llsorg.widen.net/s/vqgztg59sl/lls-tap-external-presentation">invest in biotech companies and projects</a>, getting royalties and other financial considerations if their gifts help fund new treatments. In court filings, Nationwide Children’s called the notion that the tiny Sophia’s Cure had any right to the drug “simply not true, or even plausible,” and AveXis called it “wholly unsupported.”</p>
-        
-    
-                            
-    
-                    
+
+
+
+
+
 <p data-pp-blocktype="copy" data-pp-id="17.0">Carbona said he was “disappointed and surprised” by the lawsuit. Nationwide didn’t respond to questions about the matter.</p>
 
 <p data-pp-blocktype="copy" data-pp-id="17.1">In November 2017, as the litigation went on, the results of the clinical trial that the charity helped fund were published.</p>
@@ -361,23 +443,23 @@
 <p data-pp-blocktype="copy" data-pp-id="17.15">Cell and gene therapies also drove prices higher. The first three such treatments were approved in 2017, launching at prices of $370,000 or more. Luxturna, a gene therapy for a rare disorder that causes vision loss, costs $425,000 per eye.</p>
 
 <p data-pp-blocktype="copy" data-pp-id="17.16">Industry insiders assumed Zolgensma would cost more than Luxturna. But how much?</p>
-        
-    
-                    
 
-    
+
+
+
+
         <p>There was what I would call pressure from Wall Street. This was going to set a precedent. Investors wanted to see a high price here.</p>
 
-    
-        
+
+
         —Dr. Steven D. Pearson, founder of a nonprofit that assesses drug prices
 
-    
-    
 
-        
-    
-                    
+
+
+
+
+
 <p data-pp-blocktype="copy" data-pp-id="19.0">How drug companies pick prices for their products is among their most closely held secrets.</p>
 
 <p data-pp-blocktype="copy" data-pp-id="19.1">Beyond its statement, Novartis didn’t respond to questions from ProPublica about how it set or justified Zolgensma’s price. We reached out to more than three dozen people who were at the company or consulted for it at the time; most didn’t respond or declined to comment. A couple said they were bound by nondisclosure agreements.</p>
@@ -425,11 +507,11 @@
 <p data-pp-blocktype="copy" data-pp-id="19.22">Novartis finally revealed the treatment’s U.S. launch price, $2.125 million, framing this as a 50% discount on Spinraza and what the company’s research showed the gene therapy was worth.</p>
 
 <p data-pp-blocktype="copy" data-pp-id="19.23">It also pocketed yet another taxpayer-funded benefit: a voucher from the Food and Drug Administration redeemable for accelerated review of another drug. Such vouchers — designed to encourage companies to invest in pediatric rare-disease treatments — can be sold, typically bringing prices of <a href="https://www.fiercepharma.com/pharma/sarepta-sells-prv-102m-mystery-buyer-another-example-declining-prices-fda-vouchers">around $100 million</a> apiece.</p>
-        
-    
-                            
-    
-                    
+
+
+
+
+
 <p data-pp-blocktype="copy" data-pp-id="21.0">That same day, ICER released an update. New data showing Zolgensma’s substantial benefits for presymptomatic children made the drug cost-effective at prices up to $1.9 million by one benchmark and up to $2.1 million by another, it said.</p>
 
 <p data-pp-blocktype="copy" data-pp-id="21.1">Pearson acknowledged the scale and timing of the switch were unusual, but said it was driven by the data, not outside pressure. “We weren’t trying to fit into somebody’s preexpectation of where the number would be, believe me,” he said.</p>
@@ -470,29 +552,29 @@
 <p data-pp-blocktype="copy" data-pp-id="21.18">“It’s maddening to me,” he said.</p>
 
 <p data-pp-blocktype="copy" data-pp-id="21.19">After setting aside their charity work, the Gaynors refocused their energy on Sophia and her two younger siblings, who don’t have SMA.</p>
-        
-    
-                    
 
-    
-        
 
-                        
-                    
-                
+
+
+
+
+
+
+
+
 
             The Gaynor family
-    
+
             (Photo courtesy Vincent Gaynor)
-    
-    
-    
 
-    
 
-        
-    
-                    
+
+
+
+
+
+
+
 <p data-pp-blocktype="copy" data-pp-id="23.0">They’ve taken the clan to Disney World and to the Bahamas to swim with dolphins. Their youngest, who’s 8, lies beside Sophia on her bed and watches movies with her.</p>
 
 <p data-pp-blocktype="copy" data-pp-id="23.1">Now 15, Sophia had her longest-ever hospitalization in early 2024 when a virus caused her blood sugar to plummet and triggered frequent seizures. She didn’t wake up for two weeks. Since then, she’s been weaker, her affect flatter.</p>
@@ -506,24 +588,24 @@
 <p data-pp-blocktype="copy" data-pp-id="23.5">He still bristles at the drug’s price, which he blames on the payouts hauled in by those at AveXis and now Novartis.</p>
 
 <p data-pp-blocktype="copy" data-pp-id="23.6">“All those people, they all came in at the 12th hour once the trial was funded and you had the breakthrough,” he said. “Once it was taken from us, it was all about greed.”</p>
-        
-    
-                    
-    
+
+
+
+
         <p>
             <strong><a href="https://www.propublica.org/getinvolved/send-propublica-story-tips">Do You Have a Tip for ProPublica? Help Us Do Journalism.</a></strong>
         </p>
 
-            
-             
 
-                                    
-        
+
+
+
+
                         <p><a href="https://www.propublica.org/people/kirsten-berg">Kirsten Berg</a> contributed research.</p>
 
-        
 
-    
+
+
                                          ]]></description>
             <link>https://www.propublica.org/article/zolgensma-sma-novartis-drug-prices-gene-therapy-avexis</link>
             <guid isPermaLink="false">https://www.propublica.org/article/zolgensma-sma-novartis-drug-prices-gene-therapy-avexis</guid>
@@ -553,166 +635,6 @@
             <guid isPermaLink="false">https://www.theguardian.com/music/2025/feb/12/kanye-west-sued-dropped-by-talent-agency-and-retail-platform-over-antisemitic-remarks</guid>
             <dc:creator><![CDATA[guardian-us]]></dc:creator>
             <pubDate>Wed, 12 Feb 2025 11:54:40 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Uline turned to Mexico to staff warehouses, but paid them a fraction of US workers, sources say]]></title>
-            <description><![CDATA[<p>At company owned by a Trump mega-donor, workers brought from Mexico earned per day about the same as their US counterparts were paid by the hour</p><p>Uline, a Wisconsin-based office supply company owned by one of Donald Trump’s biggest financial backers, paid workers it brought from Mexico to work at its US warehouses just a fraction of what their US counterparts were paid, according to four sources who spoke to the Guardian.</p><p>The workers from Mexico earned per day about the same as their US counterparts were paid by the hour, according to the American and Mexican sources, who spoke on condition of anonymity because of nervousness about speaking out publicly against the company. One pay stub, which was seen by the Guardian, showed that a Mexican worker was paid about $38 per day, plus a weekly bonus of about $225 before taxes. Separately, they were also paid daily food expenses.</p><p>Do you have a tip on this story? Please email: US.Investigations@theguardian.com</p> <a href="https://www.theguardian.com/us-news/2025/feb/12/uline-trump-mega-donors-underpaid-mexican-workers">Continue reading...</a>]]></description>
-            <link>https://www.theguardian.com/us-news/2025/feb/12/uline-trump-mega-donors-underpaid-mexican-workers</link>
-            <guid isPermaLink="false">https://www.theguardian.com/us-news/2025/feb/12/uline-trump-mega-donors-underpaid-mexican-workers</guid>
-            <dc:creator><![CDATA[guardian-us]]></dc:creator>
-            <pubDate>Wed, 12 Feb 2025 11:00:24 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Tennessee Lawmakers Push to Change How the State Disarms Dangerous People to Better Protect Domestic Violence Victims]]></title>
-            <description><![CDATA[
-                <p class="byline">
-                by <span class="name">Paige Pfleger</span>, WPLN/Nashville Public Radio                </p>
-                                             
-
-        
-                        <p>This article was produced for ProPublica’s Local Reporting Network in partnership with <a href="https://wpln.org/">WPLN/Nashville Public Radio</a>. <a href="https://www.propublica.org/newsletters/dispatches">Sign up for Dispatches</a> to get stories like this one as soon as they are published.</p>
-
-        
-
-    
-      
-  
-
-
-
-                    
-<p data-pp-blocktype="copy" data-pp-id="1.0">Two Republican state lawmakers in Tennessee have filed legislation that aims to protect domestic violence victims by requiring more transparency from people who’ve been ordered by a court to give up their guns.</p>
-
-<p data-pp-blocktype="copy" data-pp-id="1.1">The bill’s introduction follows WPLN and ProPublica reporting that found the <a href="https://www.propublica.org/series/guns-in-dangerous-hands">state’s lax gun laws and enforcement allow firearms to remain in the hands of </a><a href="https://www.propublica.org/series/guns-in-dangerous-hands">abusers</a> who’ve been barred from keeping them, including some who have gone on to kill their victims. In Tennessee, when someone is convicted of a domestic violence charge or is subject to an order of protection, they are not allowed to possess a gun.</p>
-
-<p data-pp-blocktype="copy" data-pp-id="1.2">Tennessee is one of about a dozen states that allows someone who is ordered to surrender their guns to give them to a third party, such as a friend or relative. And it’s one of the only states that doesn’t require that person to be identified in court, leaving the legal system no way to check up on them. Someone could say they gave up their guns but still have access to them, advocates for domestic violence victims say.</p>
-        
-    
-                    
-<p data-pp-blocktype="copy" data-pp-id="3.0">WPLN and ProPublica’s most recent reporting on guns highlighted the work of <a href="https://www.propublica.org/article/tennessee-scott-county-domestic-violence-guns">rural Scott County, which has revolutionized its approach to reducing domestic violence</a>, in part by requiring gun-dispossession forms to include the names of the people who are receiving the firearms. </p>
-
-<p data-pp-blocktype="copy" data-pp-id="3.1">State Rep. Kelly Keisling, a Republican who represents Scott County, and state Sen. Becky Massey, R-Knoxville, now want to take that change statewide. Massey pointed to WPLN and ProPublica’s reporting on Scott County as inspiration for the bill. But she said it’s unclear what its chances are with the state’s Republican supermajority.</p>
-
-<p data-pp-blocktype="copy" data-pp-id="3.2">“The kiss of death to a bill is to say it would be easy,” Massey said. “Time will tell. You don’t know whether you can accomplish something unless you try. But I mean, it’s not changing the law. They are supposed to dispossess. So it’s just a matter of what the form is like.”</p>
-
-<p data-pp-blocktype="copy" data-pp-id="3.3">While amending the public form is a simple step, it could have a massive payoff, said Christy Harness, who has worked in domestic violence in Scott County for decades and manages the county’s family justice center, which helps victims.</p>
-
-<p data-pp-blocktype="copy" data-pp-id="3.4">“You are kidding me!” a jubilant Harness said when she heard the news about the bill. “My gosh. How awesome for victims across the state.”</p>
-
-<p data-pp-blocktype="copy" data-pp-id="3.5">Tennessee consistently has one of the highest rates of women killed by men, and most of those homicides are committed with guns. WPLN and ProPublica’s analysis of homicide data and court records in Nashville showed that from 2007 to 2024, nearly 40% of those who died in domestic violence shootings were killed by someone who should not have had access to a firearm at the time of the crime. </p>
-
-<p data-pp-blocktype="copy" data-pp-id="3.6">“Had they not been able to maintain possession of that firearm or it was given to somebody who we could check with, then maybe we’ve done that extra step to save somebody’s life,” Harness said. </p>
-
-<p data-pp-blocktype="copy" data-pp-id="3.7">Research has shown that domestic violence incidents are highly likely to become lethal when a firearm is involved. And the dangers extend outside the home, too — one study showed domestic violence calls are among the most dangerous for law enforcement to respond to, and researchers found that mass shooters often have a history of domestic violence. </p>
-
-<p data-pp-blocktype="copy" data-pp-id="3.8">Requiring the name and address of third-party holders in gun-dispossession cases “really is an added protection for the peace of mind of victims,” said Judge Scarlett Ellis, who oversees Scott County’s domestic violence court. “There’s a little bit more accountability.”</p>
-
-<p data-pp-blocktype="copy" data-pp-id="3.9">Ellis said she has not had anyone refuse to fill out, sign or return the amended form — even in a rural, conservative, Second Amendment-friendly county like hers. Scott has voted for Donald Trump by the highest percentage of any county in Tennessee for the past two presidential elections.</p>
-
-<p data-pp-blocktype="copy" data-pp-id="3.10">“This is just a clear example of when a community gets behind enforcing the law, it doesn't matter how big you are, how small you are — changes can be made,” Ellis said.</p>
-        
-                                   ]]></description>
-            <link>https://www.propublica.org/article/tennessee-guns-dispossession-domestic-violence</link>
-            <guid isPermaLink="false">https://www.propublica.org/article/tennessee-guns-dispossession-domestic-violence</guid>
-            <dc:creator><![CDATA[propublica]]></dc:creator>
-            <pubDate>Wed, 12 Feb 2025 11:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Defamation Lawsuit Against Author of a ProPublica Article Ends After Courts Side With the Writer]]></title>
-            <description><![CDATA[
-                <p class="byline">
-                by <a class="name" href="https://www.propublica.org/people/propublica">ProPublica</a>                </p>
-                                             
-
-                                                                    
-            
-                <p>ProPublica is a nonprofit newsroom that investigates abuses of power. Sign up to receive <a href="https://www.propublica.org/newsletters/the-big-story?source=54G&amp;placement=top-note&amp;region=national">our biggest stories</a> as soon as they’re published.</p>
-
-            
-
-                
-
-      
-  
-
-
-
-                    
-<p data-pp-blocktype="copy" data-pp-id="1.0">A multiyear defamation lawsuit sparked by a ProPublica article officially ended on Jan. 24, marking a final victory in the case for its author, freelance journalist William D. Cohan. A New York state appeals court had ruled in his favor in 2023, and the state’s highest court left that ruling in place in September 2024, declining to hear an appeal. The plaintiff ultimately agreed to pay Cohan certain defense costs and did not pursue a long-shot appeal to the U.S. Supreme Court. With that, the parties concluded the case.</p>
-
-<p data-pp-blocktype="copy" data-pp-id="1.1">The suit stemmed from a July 2020 article written by Cohan titled “<a href="https://www.propublica.org/article/the-bizarre-fall-of-the-ceo-of-coach-and-kate-spades-parent-company">The Bizarre Fall of the CEO of Coach and Kate Spade’s Parent Company</a>.” Jide Zeitlin, the subject of the article, sued Cohan in 2021, claiming that he was defamed by the story. The article chronicled Zeitlin’s “improbable” rise from modest circumstances as the son of a Nigerian maid to becoming a Goldman Sachs partner and Fortune 500 CEO. It also examined his downfall, as allegations of an extramarital affair with a woman he photographed helped lead to his resignation from Tapestry, the corporation that owns Coach and other prominent brands.</p>
-        
-    
-                            
-    
-                    
-<p data-pp-blocktype="copy" data-pp-id="4.0">As <a href="https://www.propublica.org/article/appeals-court-jide-zeitlin-coach-propublica-william-cohan">ProPublica previously reported</a>, the <a href="https://www.documentcloud.org/documents/24165777-zeitlin-v-cohan-order/">state appeals court found</a> that the article “flatly contradicts the existence of actual malice,” the standard of proof that a public figure must meet to win a libel suit. The appeals court credited the fact that Cohan cited Zeitlin’s denials in the article, provided links to original documents so that readers could judge for themselves and relied on a “host of other sources whose reliability plaintiff does not challenge.” As the opinion put it, “plaintiff’s allegations of actual malice rest largely on his own statements.”</p>
-
-<p data-pp-blocktype="copy" data-pp-id="4.1">“This is a great victory for diligent journalism in the public interest,” said Jeremy Kutner, ProPublica’s general counsel. “We are thrilled that the courts reaffirmed protections for freedom of the press at a time when that is more important than ever.”</p>
-
-<p data-pp-blocktype="copy" data-pp-id="4.2">Jay Ward Brown and Emmy Parsons of Ballard Spahr LLP represented Cohan and ProPublica.</p>
-        
-                                   ]]></description>
-            <link>https://www.propublica.org/article/jide-zeitlin-coach-kate-spade-tapestry-defamation-lawsuit-ends</link>
-            <guid isPermaLink="false">https://www.propublica.org/article/jide-zeitlin-coach-kate-spade-tapestry-defamation-lawsuit-ends</guid>
-            <dc:creator><![CDATA[propublica]]></dc:creator>
-            <pubDate>Wed, 12 Feb 2025 10:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Why giving up the Chagos Islands could cost Britain £9bn – podcast]]></title>
-            <description><![CDATA[<p>Eleni Courea discusses the UK’s historic deal to sign sovereignty of the Chagos Islands to Mauritius, and why some inside the Labour party are now regretting it. Campaigner Olivier Bancoult outlines why he hopes the deal will go ahead</p><p>In October last year, the UK and Mauritian governments reached a historic agreement to transfer the sovereignty of the Chagos Islands, a series of atolls in the Indian Ocean that have been described as Britain’s last African colony.</p><p>It seemed, as political correspondent <strong>Eleni Courea </strong>describes, a diplomatic triumph for the new Labour government, ending decades of legal dispute over the ownership of the islands. And more than that, it offered Chagossians, after more than 50 years of exile, the prospect of returning home. In the late 1960s, when Britain granted independence to the rest of Mauritius, not only did it insist on carving out the Chagos Islands to keep for itself, but it forcibly displaced more than 1,000 people who lived there.</p> <a href="https://www.theguardian.com/news/audio/2025/feb/12/why-giving-up-the-chagos-islands-could-cost-britain-9bn-podcast">Continue reading...</a>]]></description>
-            <link>https://www.theguardian.com/news/audio/2025/feb/12/why-giving-up-the-chagos-islands-could-cost-britain-9bn-podcast</link>
-            <guid isPermaLink="false">https://www.theguardian.com/news/audio/2025/feb/12/why-giving-up-the-chagos-islands-could-cost-britain-9bn-podcast</guid>
-            <dc:creator><![CDATA[guardian-us]]></dc:creator>
-            <pubDate>Wed, 12 Feb 2025 03:00:14 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Jordanian King Rebuffs Trump Proposal to Displace Palestinians in Gaza]]></title>
-            <description><![CDATA[His pushback came after President Trump insisted Tuesday that the United States has the authority to “take” Gaza.]]></description>
-            <link>https://www.nytimes.com/2025/02/11/us/politics/trump-jordan-gaza.html</link>
-            <guid isPermaLink="false">https://www.nytimes.com/2025/02/11/us/politics/trump-jordan-gaza.html</guid>
-            <dc:creator><![CDATA[nytimes-homepage]]></dc:creator>
-            <pubDate>Wed, 12 Feb 2025 00:56:52 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Italian Police Arrest 181 in ‘Important Blow’ to Cosa Nostra]]></title>
-            <description><![CDATA[Scores of people suspected of being affiliated with the resurgent mob were arrested Tuesday during overnight raids in Palermo and the surrounding area.]]></description>
-            <link>https://www.nytimes.com/2025/02/11/world/europe/italy-cosa-nostra-arrests.html</link>
-            <guid isPermaLink="false">https://www.nytimes.com/2025/02/11/world/europe/italy-cosa-nostra-arrests.html</guid>
-            <dc:creator><![CDATA[nyt-world]]></dc:creator>
-            <pubDate>Wed, 12 Feb 2025 00:33:07 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Solomon Islands landowners seek compensation over catastrophic oil spill]]></title>
-            <description><![CDATA[<p>Claim over the 2019 Rennell Island disaster, which saw more than 300 tonnes of fuel leak into the water, filed in the Solomons High court</p><p>The companies allegedly responsible for the one of the worst environmental disasters in Solomon Islands’ history are being sued over the catastrophic oil spill that caused harm to an ecologically sensitive island.</p><p>The claim over the 2019 Rennell Island disaster was filed in the Solomons high court last week, just days before the statute of limitations expired.</p> <a href="https://www.theguardian.com/world/2025/feb/12/rennell-island-disaster-solomon-islands-landowners-seek-compensation-over-catastrophic-oil-spill-ntwnfb">Continue reading...</a>]]></description>
-            <link>https://www.theguardian.com/world/2025/feb/12/rennell-island-disaster-solomon-islands-landowners-seek-compensation-over-catastrophic-oil-spill-ntwnfb</link>
-            <guid isPermaLink="false">https://www.theguardian.com/world/2025/feb/12/rennell-island-disaster-solomon-islands-landowners-seek-compensation-over-catastrophic-oil-spill-ntwnfb</guid>
-            <dc:creator><![CDATA[guardian-us]]></dc:creator>
-            <pubDate>Wed, 12 Feb 2025 00:22:57 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[King Abdullah rebuffs Trump’s push for Jordan to take in displaced Palestinians]]></title>
-            <description><![CDATA[<p>Egypt also rejects idea, saying it planned to present vision of reconstruction in Gaza for Palestinians to remain on land</p><p>Donald Trump has pressed Jordan’s King Abdullah to take in Palestinians who would be permanently displaced under <a href="https://www.theguardian.com/world/2025/feb/05/donald-trump-plan-to-take-over-gaza-strip-netanyahu-visit">the US president’s idea for the US to take over the Gaza Strip</a> – even as the king said his country was firmly opposed to the move.</p><p>Speaking alongside the Arab country’s ruler in the White House, Trump signaled he would not budge on his idea that involves <a href="https://www.theguardian.com/world/2025/feb/05/donald-trump-gaza-strip-plan-take-over-move-palestinians-ownership">moving the Gaza Strip’s shell-shocked residents</a> and transforming the war-ravaged territory into what he billed a “Riviera of the Middle East”.</p> <a href="https://www.theguardian.com/us-news/2025/feb/11/trump-jordan-egypt-palestinians">Continue reading...</a>]]></description>
-            <link>https://www.theguardian.com/us-news/2025/feb/11/trump-jordan-egypt-palestinians</link>
-            <guid isPermaLink="false">https://www.theguardian.com/us-news/2025/feb/11/trump-jordan-egypt-palestinians</guid>
-            <dc:creator><![CDATA[guardian-us]]></dc:creator>
-            <pubDate>Tue, 11 Feb 2025 23:28:11 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[In Overture to Trump, Palestinian Leader Mahmoud Abbas Ends Payments for Prisoners]]></title>
-            <description><![CDATA[The United States and Israel have long condemned the payment of stipends to families of Palestinian prisoners involved in attacks on Israel.]]></description>
-            <link>https://www.nytimes.com/2025/02/11/world/middleeast/abbas-prisoner-payments-trump.html</link>
-            <guid isPermaLink="false">https://www.nytimes.com/2025/02/11/world/middleeast/abbas-prisoner-payments-trump.html</guid>
-            <dc:creator><![CDATA[nyt-world]]></dc:creator>
-            <pubDate>Tue, 11 Feb 2025 22:22:10 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Judge Directs Trump Administration to Comply With Order on Frozen Funds]]></title>
-            <description><![CDATA[The ruling is the latest rebuke of the president’s effort to halt grants approved by Congress.]]></description>
-            <link>https://www.wsj.com/us-news/judge-orders-trump-administration-to-comply-with-order-on-frozen-funds-22a53ff3</link>
-            <guid isPermaLink="false">https://www.wsj.com/us-news/judge-orders-trump-administration-to-comply-with-order-on-frozen-funds-22a53ff3</guid>
-            <dc:creator><![CDATA[wsj-us]]></dc:creator>
-            <pubDate>Tue, 11 Feb 2025 02:45:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
