@@ -15,12 +15,12 @@ async function labelArticles(articles, method) {
   });
 }
 
-async function findArticle({ link }) {
-  return await Article.findOne({ where: { url: link } });
+async function findArticle({ guid }) {
+  return await Article.findOne({ where: { url: guid } });
 }
 
 async function saveArticle({
-  link,
+  guid,
   title,
   description,
   label,
@@ -28,7 +28,7 @@ async function saveArticle({
   feedId,
 }) {
   const article = await Article.create({
-    url: link,
+    url: guid,
     title,
     description,
     label,
