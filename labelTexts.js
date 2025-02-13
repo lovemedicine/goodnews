@@ -40,9 +40,17 @@ async function labelTextsWithBart(texts) {
 const genAI = new GoogleGenerativeAI(geminiApiKey);
 const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
+async function writePrompt(text, version = 1) {
+  const promptStart = [
+    `Would a leftist consider the following news a win, a loss, or neither? (Please answer with only one word: "win", "loss", or "neither". Answer "not news" if the provided text is an opinion piece.)`,
+    `Would a leftist consider the following news to be hopeful, stressful, or neither? (Please answer with one word. If it would be mix of hopeful and stressful, answer "neither". If the text is not news, answer "not news".)`,
+  ];
+
+  return promptStart[version - 1] + `\n\n"${text}"`;
+}
+
 export async function labelTextWithGemini(text) {
-  const promptStart = `Would a leftist consider the following news a win, a loss, or neither? (Please answer with only one word: "win", "loss", or "neither". Answer "not news" if the provided text is an opinion piece.) `;
-  const result = await model.generateContent(promptStart + `"${text}"`);
+  const result = await model.generateContent(writePrompt(text));
   const labelMap = {
     win: "good news",
     loss: "bad news",

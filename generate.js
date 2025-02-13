@@ -60,6 +60,8 @@ for (let i = 0; i < feeds.length; i++) {
       await saveArticle(article);
       console.log(text);
       console.log(article.label);
+      // gemini is free but rate-limited to 15 req/min
+      await new Promise((r) => setTimeout(r, 4000));
     }
   }
 
@@ -68,4 +70,5 @@ for (let i = 0; i < feeds.length; i++) {
   }
 }
 
-await generateFeed();
+await generateFeed("good", ["good news"]);
+await generateFeed("notbad", ["good news", "neutral news"]);

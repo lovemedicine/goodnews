@@ -1,7 +1,7 @@
 {
   "scripts": {
     "generate": "node generate.js",
-    "publish": "git add docs/feed.xml; git commit -m\"update feed\"; git push"
+    "publish": "git add docs; git commit -m\"update feed\"; git push"
   },
   "type": "module",
   "dependencies": {
