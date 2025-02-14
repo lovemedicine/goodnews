@@ -4,12 +4,13 @@ import { getAllFeeds, fetchNewArticles } from "./fetchArticles.js";
 import { Article, Feed } from "./db.js";
 import { generateFeed } from "./generateFeed.js";
 
-async function findArticle({ guid }) {
-  return await Article.findOne({ where: { url: guid } });
+async function findArticle({ guid, link }) {
+  return await Article.findOne({ where: { url: guid || link } });
 }
 
 async function saveArticle({
   guid,
+  link,
   title,
   description,
   creator,
@@ -18,7 +19,7 @@ async function saveArticle({
   feedId,
 }) {
   const article = await Article.create({
-    url: guid,
+    url: guid || link,
     title,
     description,
     author: creator,

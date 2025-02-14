@@ -37,6 +37,6 @@ export async function generateFeed(name, labels) {
   });
 
   const xml = feed.xml({ indent: true });
-  await fs.writeFileSync(`docs/${name}.xml`, xml);
+  await fs.writeFileSync(`feeds/${name}.xml`, xml);
   return xml;
 }
