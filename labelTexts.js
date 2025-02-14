@@ -56,7 +56,7 @@ export async function labelTextWithGemini(text) {
     loss: "bad news",
     neither: "neutral news",
     "not news": "not news",
-    opinion,
+    opinion: "opinion",
   };
 
   return labelMap[result.response.text().trim().toLowerCase()];

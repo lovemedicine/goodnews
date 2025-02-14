@@ -1,3 +1,4 @@
+import "dotenv/config";
 import { labelTextWithGemini } from "./labelTexts.js";
 import { getAllFeeds, fetchNewArticles } from "./fetchArticles.js";
 import { Article, Feed } from "./db.js";
