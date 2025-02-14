@@ -5,7 +5,9 @@ import { Article, Feed } from "./db.js";
 import { generateFeed } from "./generateFeed.js";
 
 async function findArticle({ guid, link }) {
-  return await Article.findOne({ where: { url: guid || link } });
+  return await Article.findOne({
+    where: { url: typeof guid === "string" ? guid : link },
+  });
 }
 
 async function saveArticle({
@@ -19,7 +21,7 @@ async function saveArticle({
   feedId,
 }) {
   const article = await Article.create({
-    url: guid || link,
+    url: typeof guid === "string" ? guid : link,
     title,
     description,
     author: creator,
