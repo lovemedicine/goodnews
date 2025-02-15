@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "update": "node update.js",
     "generate": "node generate.js",
     "publish": "git add docs; git commit -m\"update feed\"; git push"
   },
