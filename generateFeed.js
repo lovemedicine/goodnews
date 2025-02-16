@@ -18,8 +18,8 @@ export async function generateFeed(name, labels) {
   const feed = new RSS({
     title: `The New Dark Times - ${name}`,
     description: "All the news that's fit to print, minus the sad stuff",
-    feed_url: `https://lovemedicine.github.io/goodnews/${name}.xml`,
-    site_url: "https://lovemedicine.github.io/goodnews",
+    feed_url: `http://44.211.205.194/${name}.xml`,
+    site_url: "http://44.211.205.194/",
     language: "en",
     pubDate: lastPublishedAt,
     ttl: "60",

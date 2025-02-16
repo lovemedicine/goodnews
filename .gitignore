@@ -1,5 +1,5 @@
 .env
 node_modules
 goodnews.db
-corrections.txt
+corrections.csv
 notes
