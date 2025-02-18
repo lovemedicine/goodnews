@@ -68,7 +68,7 @@ export async function askGemini(prompt) {
     .toLowerCase();
 }
 
-export async function labelTextWithGemini(text, promptVersion = "v2") {
+export async function labelTextWithGemini(text, promptVersion = "v4") {
   const prompt = prompts[promptVersion];
   const result = await askGemini(prompt.create(text));
   return prompt.standardize(result);
