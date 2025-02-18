@@ -20,10 +20,10 @@ const feedUrls = [
   ["Democracy Now", "https://www.democracynow.org/democracynow.rss"],
   ["The American Prospect", "https://prospect.org/api/rss/content.rss"],
   ["Common Dreams", "https://www.commondreams.org/feeds/feed.rss"],
-  ["People's Dispatch", "https://peoplesdispatch.org/feed/"],
   // ["Chicago Tribune", "https://www.chicagotribune.com/feed/"],
   // ["San Jose Mercury News", "https://www.mercurynews.com/news/feed/"],
   // ["NBC News", "https://feeds.nbcnews.com/nbcnews/public/news"],
+  // ["People's Dispatch", "https://peoplesdispatch.org/feed/"],
 ];
 
 async function findFeedByUrl(url) {
