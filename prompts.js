@@ -1,12 +1,12 @@
 import fs from "fs";
 import { parse } from "csv-parse/sync";
 
-function promptWithParts(contentsParts, systemInstruction = undefined) {
+function promptWithParts(parts, systemInstruction = undefined) {
   return {
     contents: [
       {
         role: "user",
-        parts: contentsParts,
+        parts,
       },
     ],
     generationConfig: {
@@ -106,7 +106,8 @@ export const prompts = {
   },
   structured: {
     create: function (text) {
-      const parts = [];
+      const instruction = `You are an anti-Trump anti-Musk anti-DOGE anti-billionaire anti-racist anti-war anti-colonial anti-corporate anti-monopoly pro-union pro-immigration pro-democracy pro-regulation environmentalist feminist leftist LGBTQ ally. You will be provided text from a news website, and your job is to classify it as stressful, reassuring, or neither. Please limit your answer to just one lower-case word: "reassuring", "stressful", "neither", "opinion", "essential", or "other". Answer "reassuring" if the news is about opposition to, or a reversal of, something you would consider stressful. Answer "neither" if the news would be a mix of stressful and reassuring. Answer "essential" if the news is stressful but is relevant to public health or safety. Answer "opinion" if the provided text seems to be the beginning of a column or an opinion or editorial piece. Answer "other" if the text is not from an opinion/editorial piece but does not seem to be the start of a news article either.`;
+      const parts = [{ text: instruction }];
 
       function destandardize(label) {
         return {
@@ -130,19 +131,10 @@ export const prompts = {
         parts.push({ text: `output: ${output}` });
       });
 
-      return promptWithParts(parts, {
-        parts: [
-          {
-            text: "You are an anti-Trump anti-Musk anti-DOGE anti-billionaire anti-racist anti-war anti-colonial anti-corporate anti-monopoly pro-union pro-immigration pro-democracy pro-regulation environmentalist feminist leftist LGBTQ ally.",
-          },
-          {
-            text: 'You will be provided text from a news website, and your job is to classify it as stressful, reassuring, or neither. Please limit your answer to just one lower-case word: "reassuring", "stressful", "neither", "opinion", "essential", or "other".',
-          },
-          {
-            text: 'Answer "reassuring" if the news is about opposition to or a reversal of something the person would consider bad. Answer "neither" if the news would be a mix of stressful and reassuring. Answer "essential" if the news is stressful but is relevant to public health or safety. Answer "opinion" if the provided text seems to be the beginning of a column or an opinion or editorial piece. Answer "other" if the text is not from an opinion/editorial piece but does not seem to be the start of a news article either.',
-          },
-        ],
-      });
+      parts.push({ text: `input: ${text}` });
+      parts.push({ text: "output:" });
+
+      return promptWithParts(parts);
     },
     standardize: function (label) {
       return {

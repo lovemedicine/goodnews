@@ -42,9 +42,10 @@ async function ensureFeeds() {
   }
 }
 
-export async function getAllFeeds() {
+export async function getFeeds() {
   await ensureFeeds();
-  return await Feed.findAll();
+  const urls = feedUrls.map(([_, url]) => url);
+  return await Feed.findAll({ where: { url: urls } });
 }
 
 export async function fetchNewArticles(feed) {

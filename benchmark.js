@@ -31,7 +31,7 @@ async function benchmarkPrompt(prompt, filename) {
 }
 
 const version = process.argv[2] || "v4";
-const filename = process.argv[3] || "corrections.csv";
+const filename = process.argv[3] || "tuning.csv";
 const results = await benchmarkPrompt(prompts[version], filename);
 const misses = results.filter(
   (result) => result.expectedLabel !== result.actualLabel

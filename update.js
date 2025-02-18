@@ -1,7 +1,7 @@
 import "dotenv/config";
 import { convert } from "html-to-text";
 import { labelTextWithGemini } from "./labelTexts.js";
-import { getAllFeeds, fetchNewArticles } from "./fetchArticles.js";
+import { getFeeds, fetchNewArticles } from "./fetchArticles.js";
 import { Article, Feed } from "./db.js";
 
 async function findArticle({ guid, link }) {
@@ -42,7 +42,7 @@ async function updateLastPublished(feed, dateTime) {
   );
 }
 
-const feeds = await getAllFeeds();
+const feeds = await getFeeds();
 
 for (let i = 0; i < feeds.length; i++) {
   const feed = feeds[i];
