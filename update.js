@@ -62,7 +62,10 @@ for (let i = 0; i < feeds.length; i++) {
       const text =
         article.title +
         ". " +
-        convert(article.description, { wordwrap: false });
+        convert(article.description, {
+          wordwrap: false,
+          selectors: [{ selector: "a", options: { ignoreHref: true } }],
+        });
       article.label = await labelTextWithGemini(text);
       await saveArticle(article);
       console.log(text);
