@@ -1,5 +1,6 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { geminiApiKey, hfToken } from "./config.js";
+import { prompts } from "./prompts.js";
 
 async function queryBart(data) {
   const response = await fetch(
@@ -40,24 +41,35 @@ async function labelTextsWithBart(texts) {
 const genAI = new GoogleGenerativeAI(geminiApiKey);
 const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
-function writePrompt(text, version = 1) {
-  const promptStart = [
-    `Would a leftist consider the following news a win, a loss, or neither? (Please answer with only one word: "win", "loss", or "neither". Answer "opinion" if the provided text is an opinion piece, or "not news" if the text is otherwise not a news article.)`,
-    `Would a leftist consider the following news to be hopeful, stressful, or neither? (Please answer with one word. If it would be mix of hopeful and stressful, answer "neither". Answer "opinion" if the provided text is an opinion piece, or "not news" if the text is otherwise not a news article.)`,
-  ];
-
-  return promptStart[version - 1] + `\n\n"${text}"`;
-}
-
-export async function labelTextWithGemini(text) {
-  const result = await model.generateContent(writePrompt(text));
-  const labelMap = {
-    win: "good news",
-    loss: "bad news",
-    neither: "neutral news",
-    "not news": "not news",
-    opinion: "opinion",
+export async function askGemini(prompt) {
+  const input = {
+    contents: [
+      {
+        role: "user",
+        parts: [
+          {
+            text: prompt,
+          },
+        ],
+      },
+    ],
+    generationConfig: {
+      temperature: 0.1,
+      topP: 0.95,
+      topK: 40,
+      maxOutputTokens: 8192,
+      responseMimeType: "text/plain",
+    },
   };
 
-  return labelMap[result.response.text().trim().toLowerCase()];
+  return (await model.generateContent(input)).response
+    .text()
+    .trim()
+    .toLowerCase();
+}
+
+export async function labelTextWithGemini(text, promptVersion = "v2") {
+  const prompt = prompts[promptVersion];
+  const result = await askGemini(prompt.create(text));
+  return prompt.standardize(result);
 }

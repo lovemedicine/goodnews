@@ -18,7 +18,6 @@ const feedUrls = [
   ["The Guardian", "https://www.theguardian.com/us-news/rss"],
   ["The Intercept", "https://theintercept.com/feed/?lang=en"],
   ["Democracy Now", "https://www.democracynow.org/democracynow.rss"],
-  ["ProPublica", "https://www.propublica.org/feeds/propublica/main"],
   ["The American Prospect", "https://prospect.org/api/rss/content.rss"],
   ["Common Dreams", "https://www.commondreams.org/feeds/feed.rss"],
 ];
