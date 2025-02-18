@@ -26,10 +26,19 @@ export async function generateFeed(name, labels) {
   });
 
   articles.forEach((article) => {
+    const paywallFeeds = [
+      "New York Times",
+      "Washington Post",
+      "Wall Street Journal",
+    ];
+    const url = paywallFeeds.includes(article.Feed.name)
+      ? `https://archive.is/2025/${article.url}`
+      : article.url;
+
     feed.item({
       title: article.title,
       description: article.description,
-      url: `https://archive.is/2025/${article.url}`,
+      url,
       date: article.published_at,
       author: article.creator || article.Feed.name,
       guid: article.url,

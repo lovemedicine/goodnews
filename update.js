@@ -1,4 +1,5 @@
 import "dotenv/config";
+import { convert } from "html-to-text";
 import { labelTextWithGemini } from "./labelTexts.js";
 import { getAllFeeds, fetchNewArticles } from "./fetchArticles.js";
 import { Article, Feed } from "./db.js";
@@ -58,6 +59,7 @@ for (let i = 0; i < feeds.length; i++) {
     if (await findArticle(article)) {
       console.log(`skipping ${article.link}`);
     } else {
+      article.description = convert(article.description, { wordwrap: false });
       const text = article.title + ". " + article.description;
       article.label = await labelTextWithGemini(text);
       await saveArticle(article);
