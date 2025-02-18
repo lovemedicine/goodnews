@@ -2,5 +2,6 @@
 node_modules
 goodnews.db
 notes
-tuning/*
 feeds/*
+tuning/stressful-reassuring-tuning.csv
+tuning/validation.csv
