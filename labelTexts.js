@@ -39,36 +39,18 @@ async function labelTextsWithBart(texts) {
 }
 
 const genAI = new GoogleGenerativeAI(geminiApiKey);
-const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
 export async function askGemini(prompt) {
-  const input = {
-    contents: [
-      {
-        role: "user",
-        parts: [
-          {
-            text: prompt,
-          },
-        ],
-      },
-    ],
-    generationConfig: {
-      temperature: 0.1,
-      topP: 0.95,
-      topK: 40,
-      maxOutputTokens: 8192,
-      responseMimeType: "text/plain",
-    },
-  };
-
-  return (await model.generateContent(input)).response
+  const model = genAI.getGenerativeModel({
+    model: prompt.model || "gemini-2.0-flash",
+  });
+  return (await model.generateContent(prompt)).response
     .text()
     .trim()
     .toLowerCase();
 }
 
-export async function labelTextWithGemini(text, promptVersion = "v4") {
+export async function labelTextWithGemini(text, promptVersion = "structured") {
   const prompt = prompts[promptVersion];
   const result = await askGemini(prompt.create(text));
   return prompt.standardize(result);
