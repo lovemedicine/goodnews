@@ -20,6 +20,7 @@ const feedUrls = [
   ["Democracy Now", "https://www.democracynow.org/democracynow.rss"],
   ["The American Prospect", "https://prospect.org/api/rss/content.rss"],
   ["Common Dreams", "https://www.commondreams.org/feeds/feed.rss"],
+  ["The Lever", "https://www.levernews.com/tag/you-love-to-see-it/rss/"],
   // ["Chicago Tribune", "https://www.chicagotribune.com/feed/"],
   // ["San Jose Mercury News", "https://www.mercurynews.com/news/feed/"],
   // ["NBC News", "https://feeds.nbcnews.com/nbcnews/public/news"],
