@@ -59,8 +59,10 @@ for (let i = 0; i < feeds.length; i++) {
     if (await findArticle(article)) {
       console.log(`skipping ${article.link}`);
     } else {
-      article.description = convert(article.description, { wordwrap: false });
-      const text = article.title + ". " + article.description;
+      const text =
+        article.title +
+        ". " +
+        convert(article.description, { wordwrap: false });
       article.label = await labelTextWithGemini(text);
       await saveArticle(article);
       console.log(text);

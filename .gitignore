@@ -3,3 +3,4 @@ node_modules
 goodnews.db
 notes
 tuning/*
+feeds/*
