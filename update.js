@@ -42,6 +42,13 @@ async function updateLastPublished(feed, dateTime) {
   );
 }
 
+function isOpinion({ url, title }) {
+  return (
+    url.match(/opinion|editorial|column/i) ||
+    title.match(/\b(opinion|editorial|column)\b/i)
+  );
+}
+
 const feeds = await getFeeds();
 
 for (let i = 0; i < feeds.length; i++) {
@@ -59,14 +66,18 @@ for (let i = 0; i < feeds.length; i++) {
     if (await findArticle(article)) {
       console.log(`skipping ${article.link}`);
     } else {
-      const text =
-        article.title +
-        ". " +
-        convert(article.description, {
-          wordwrap: false,
-          selectors: [{ selector: "a", options: { ignoreHref: true } }],
-        });
-      article.label = await labelTextWithGemini(text);
+      if (isOpinion(article)) {
+        article.label = "opinion";
+      } else {
+        const text =
+          article.title +
+          ". " +
+          convert(article.description, {
+            wordwrap: false,
+            selectors: [{ selector: "a", options: { ignoreHref: true } }],
+          });
+        article.label = await labelTextWithGemini(text);
+      }
       await saveArticle(article);
       console.log(text);
       console.log(article.label);
