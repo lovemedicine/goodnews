@@ -42,11 +42,21 @@ async function updateLastPublished(feed, dateTime) {
   );
 }
 
-function isOpinion({ url, title }) {
+function isOpinion({ link, title }) {
   return (
-    url.match(/opinion|editorial|column/i) ||
+    link.match(/opinion|editorial|column/i) ||
     title.match(/\b(opinion|editorial|column)\b/i)
   );
+}
+
+function getTextForLabeling(article) {
+  if (!article.description) return article.title;
+
+  const description = convert(article.description, {
+    wordwrap: false,
+    selectors: [{ selector: "a", options: { ignoreHref: true } }],
+  });
+  return article.title + ". " + description.split("\n")[0];
 }
 
 const feeds = await getFeeds();
@@ -68,18 +78,13 @@ for (let i = 0; i < feeds.length; i++) {
     } else {
       if (isOpinion(article)) {
         article.label = "opinion";
+        console.log(article.link);
       } else {
-        const text =
-          article.title +
-          ". " +
-          convert(article.description, {
-            wordwrap: false,
-            selectors: [{ selector: "a", options: { ignoreHref: true } }],
-          });
+        const text = getTextForLabeling(article);
+        console.log(text);
         article.label = await labelTextWithGemini(text);
       }
       await saveArticle(article);
-      console.log(text);
       console.log(article.label);
       // gemini is free but rate-limited to 15 req/min
       await new Promise((r) => setTimeout(r, 4000));
