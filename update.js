@@ -4,9 +4,9 @@ import { labelTextWithGemini } from "./labelTexts.js";
 import { getFeeds, fetchNewArticles } from "./fetchArticles.js";
 import { Article, Feed } from "./db.js";
 
-async function findArticle({ guid, link }) {
+async function findArticle(article) {
   return await Article.findOne({
-    where: { url: typeof guid === "string" ? guid : link },
+    where: { url: getPermalink(article) },
   });
 }
 
@@ -21,7 +21,7 @@ async function saveArticle({
   feedId,
 }) {
   const article = await Article.create({
-    url: typeof guid === "string" ? guid : link,
+    url: getPermalink({ guid, link }),
     title,
     description,
     author: creator,
@@ -42,9 +42,17 @@ async function updateLastPublished(feed, dateTime) {
   );
 }
 
+async function getPermalink({ link, guid }) {
+  if (typeof guid === "string" && guid.match(/^http/i)) {
+    return guid;
+  } else {
+    return link;
+  }
+}
+
 function isOpinion({ link, title }) {
   return (
-    link.match(/opinion|editorial|column/i) ||
+    link.match(/opinion|editorial|column|commentisfree/i) ||
     title.match(/\b(opinion|editorial|column)\b/i)
   );
 }
