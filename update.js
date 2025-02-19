@@ -54,7 +54,10 @@ function getTextForLabeling(article) {
 
   const description = convert(article.description, {
     wordwrap: false,
-    selectors: [{ selector: "a", options: { ignoreHref: true } }],
+    selectors: [
+      { selector: "a", options: { ignoreHref: true } },
+      { selector: "img", format: "skip" },
+    ],
   });
   return article.title + ". " + description.split("\n")[0];
 }
