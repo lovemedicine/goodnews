@@ -1,4 +1,3 @@
-import "dotenv/config";
 import { convert } from "html-to-text";
 import { labelTextWithGemini } from "./labelTexts.js";
 import { getFeeds, fetchNewArticles } from "./fetchArticles.js";
