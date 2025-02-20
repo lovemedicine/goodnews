@@ -42,7 +42,7 @@ async function updateLastPublished(feed, dateTime) {
   );
 }
 
-async function getPermalink({ link, guid }) {
+function getPermalink({ link, guid }) {
   if (typeof guid === "string" && guid.match(/^http/i)) {
     return guid;
   } else {
