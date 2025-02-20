@@ -20,7 +20,22 @@ function promptWithParts(parts, systemInstruction = undefined) {
   };
 }
 
-const instruction = `You are an anti-Trump anti-Musk anti-DOGE anti-billionaire anti-racist anti-war anti-colonial anti-corporate anti-monopoly pro-union pro-immigration pro-democracy pro-regulation environmentalist feminist leftist LGBTQ ally. You will be provided text from a news website, and your job is to classify it as stressful, reassuring, or neither. Please limit your answer to just one lower-case word: "reassuring", "stressful", "neither", "opinion", "essential", or "other". Answer "reassuring" if the news is primarily about tangible opposition to, or a reversal of, something you would consider stressful. Answer "neither" if the news would be a mix of stressful and reassuring. Answer "essential" if the news is stressful but is relevant to public health or safety. Answer "opinion" if the provided text seems to be the beginning of a column or an opinion or editorial piece. Answer "other" if the text is not from an opinion/editorial piece but does not seem to be the start of a news article either.`;
+export function promptForTunedModel(text) {
+  return `${instruction}\n\nProvided text: "${text}"\nClassification: `;
+}
+
+export function destandardize(label) {
+  return {
+    good: "reassuring",
+    bad: "stressful",
+    neutral: "neither",
+    opinion: "opinion",
+    essential: "essential",
+    other: "other",
+  }[label];
+}
+
+export const instruction = `You are an anti-Trump anti-Musk anti-DOGE anti-billionaire anti-racist anti-war anti-colonial anti-corporate anti-monopoly pro-union pro-immigration pro-democracy pro-regulation environmentalist feminist leftist LGBTQ ally. You will be provided text from a news website, and your job is to classify it as stressful, reassuring, or neither. Please limit your answer to just one lower-case word: "reassuring", "stressful", "neither", "opinion", "essential", or "other". Answer "reassuring" if the news is primarily about tangible opposition to, or a reversal of, something you would consider stressful. Answer "neither" if the news would be a mix of stressful and reassuring. Answer "essential" if the news is stressful but is relevant to public health or safety. Answer "opinion" if the provided text seems to be the beginning of a column or an opinion or editorial piece. Answer "other" if the text is not from an opinion/editorial piece but does not seem to be the start of a news article either.`;
 
 export const prompts = {
   v1: {
@@ -109,18 +124,6 @@ export const prompts = {
   structured: {
     create: function (text) {
       const parts = [{ text: instruction }];
-
-      function destandardize(label) {
-        return {
-          good: "reassuring",
-          bad: "stressful",
-          neutral: "neither",
-          opinion: "opinion",
-          essential: "essential",
-          other: "other",
-        }[label];
-      }
-
       const contents = fs.readFileSync("tuning/tuning.csv").toString();
       const examples = parse(contents, {
         columns: true,
@@ -150,7 +153,11 @@ export const prompts = {
   },
   tuned: {
     create: function (text) {
-      return promptWithParts([{ text: instruction }, { text }]);
+      return promptWithParts([
+        {
+          text: promptForTunedModel(text),
+        },
+      ]);
     },
     standardize: function (label) {
       return {
@@ -162,6 +169,6 @@ export const prompts = {
         other: "other",
       }[label];
     },
-    model: "tunedModels/goodnews-prompt-v4-using-context-8cl7e75",
+    model: "tunedModels/goodnews-classifier-101-examples-qbl07sf",
   },
 };

@@ -40,10 +40,8 @@ async function labelTextsWithBart(texts) {
 
 const genAI = new GoogleGenerativeAI(geminiApiKey);
 
-export async function askGemini(prompt) {
-  const model = genAI.getGenerativeModel({
-    model: prompt.model || "gemini-2.0-flash",
-  });
+export async function askGemini(prompt, modelName = "gemini-2.0-flash") {
+  const model = genAI.getGenerativeModel({ model: modelName });
   return (await model.generateContent(prompt)).response
     .text()
     .trim()

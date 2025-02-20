@@ -19,7 +19,7 @@ async function benchmarkPrompt(prompt, filename) {
     console.log(`${i + 1}/${data.length}`);
     const { text, expectedLabel } = data[i];
     console.log("expected:", expectedLabel);
-    const returnedLabel = await askGemini(prompt.create(text));
+    const returnedLabel = await askGemini(prompt.create(text), prompt.model);
     const actualLabel = prompt.standardize(returnedLabel);
     console.log("actual:", actualLabel);
     results.push({ text, expectedLabel, actualLabel });
@@ -30,8 +30,8 @@ async function benchmarkPrompt(prompt, filename) {
   return results;
 }
 
-const version = process.argv[2] || "v4";
-const filename = process.argv[3] || "tuning.csv";
+const version = process.argv[2] || "tuned";
+const filename = process.argv[3] || "tuning/validation.csv";
 const results = await benchmarkPrompt(prompts[version], filename);
 const misses = results.filter(
   (result) => result.expectedLabel !== result.actualLabel
