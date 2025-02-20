@@ -3,5 +3,3 @@ node_modules
 goodnews.db
 notes
 feeds/*
-tuning/destandardized-tuning.csv
-tuning/validation.csv
