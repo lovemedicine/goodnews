@@ -16,10 +16,10 @@ export async function generateFeed(name, labels) {
   );
 
   const feed = new RSS({
-    title: `The New Dark Times - ${name}`,
-    description: "All the news that's fit to print, minus the sad stuff",
-    feed_url: `http://44.211.205.194/${name}.xml`,
-    site_url: "http://44.211.205.194/",
+    title: `welcome.news - ${name}`,
+    description: `all the ${name} news that's fit to print`,
+    feed_url: `http://welcome.news/${name}.xml`,
+    site_url: "http://welcome.news/",
     language: "en",
     pubDate: lastPublishedAt,
     ttl: "60",
