@@ -1,7 +1,7 @@
 import fs from "fs";
 import { parse } from "csv-parse/sync";
-import { askGemini } from "./labelTexts.js";
-import { prompts } from "./prompts.js";
+import { prompts as geminiPrompts, labelTextWithGemini } from "./gemini.js";
+import { labelTextWithOllama } from "./ollama.js";
 
 function loadData(filename) {
   const text = fs.readFileSync(filename).toString();
@@ -10,7 +10,7 @@ function loadData(filename) {
   });
 }
 
-async function benchmarkPrompt(prompt, filename) {
+async function benchmarkGemini(promptName, filename) {
   const results = [];
   const data = loadData(filename);
 
@@ -19,8 +19,7 @@ async function benchmarkPrompt(prompt, filename) {
     console.log(`${i + 1}/${data.length}`);
     const { text, expectedLabel } = data[i];
     console.log("expected:", expectedLabel);
-    const returnedLabel = await askGemini(prompt.create(text), prompt.model);
-    const actualLabel = prompt.standardize(returnedLabel);
+    const actualLabel = await labelTextWithGemini(text, promptName, true);
     console.log("actual:", actualLabel);
     results.push({ text, expectedLabel, actualLabel });
     console.log(expectedLabel === actualLabel ? "hit" : "miss");
@@ -30,9 +29,29 @@ async function benchmarkPrompt(prompt, filename) {
   return results;
 }
 
+async function benchmarkOllama(promptName, filename) {
+  const results = [];
+  const data = loadData(filename);
+
+  for (let i = 0; i < data.length; i++) {
+    console.log("-----------------------");
+    console.log(`${i + 1}/${data.length}`);
+    const { text, expectedLabel } = data[i];
+    console.log("expected:", expectedLabel);
+    const returnedLabel = await labelTextWithOllama(text);
+    const actualLabel = geminiPrompts[promptName].standardize(returnedLabel);
+    console.log("actual:", actualLabel);
+    results.push({ text, expectedLabel, actualLabel });
+    console.log(expectedLabel === actualLabel ? "hit" : "miss");
+  }
+
+  return results;
+}
+
 const version = process.argv[2] || "structured";
 const filename = process.argv[3] || "tuning/validation.csv";
-const results = await benchmarkPrompt(prompts[version], filename);
+const results = await benchmarkGemini(version, filename);
+// const results = await benchmarkOllama(prompts[version], filename);
 const misses = results.filter(
   (result) => result.expectedLabel !== result.actualLabel
 );

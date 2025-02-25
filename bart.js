@@ -1,6 +1,4 @@
-import { GoogleGenerativeAI } from "@google/generative-ai";
-import { geminiApiKey, hfToken } from "./config.js";
-import { prompts } from "./prompts.js";
+import { hfToken } from "./config.js";
 
 async function queryBart(data) {
   const response = await fetch(
@@ -34,22 +32,5 @@ async function labelTextsWithBart(texts) {
     },
   });
 
-  // console.log(response);
   return response.map(computeBartResult);
-}
-
-const genAI = new GoogleGenerativeAI(geminiApiKey);
-
-export async function askGemini(prompt, modelName = "gemini-2.0-flash") {
-  const model = genAI.getGenerativeModel({ model: modelName });
-  return (await model.generateContent(prompt)).response
-    .text()
-    .trim()
-    .toLowerCase();
-}
-
-export async function labelTextWithGemini(text, promptVersion = "structured") {
-  const prompt = prompts[promptVersion];
-  const result = await askGemini(prompt.create(text));
-  return prompt.standardize(result);
 }

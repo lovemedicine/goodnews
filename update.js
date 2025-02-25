@@ -1,5 +1,5 @@
 import { convert } from "html-to-text";
-import { labelTextWithGemini } from "./labelTexts.js";
+import { labelTextWithGemini } from "./gemini.js";
 import { getFeeds, fetchNewArticles } from "./fetchArticles.js";
 import { Article, Feed } from "./db.js";
 
