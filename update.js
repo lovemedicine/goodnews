@@ -92,7 +92,7 @@ for (let i = 0; i < feeds.length; i++) {
       } else {
         const text = getTextForLabeling(article);
         console.log(text);
-        article.label = await labelTextWithGemini(text);
+        article.label = await labelTextWithGemini(text, "structured", true);
       }
       await saveArticle(article);
       console.log(article.label);
