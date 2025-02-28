@@ -4,9 +4,13 @@ export function convertRedditArticle(article) {
   const link = article.content?.match(/<a href="([^"]+)">\[link\]/i);
 
   if (link) {
+    const domain = getRootDomain(link[1]);
+    // discard links to other reddit posts
+    if (domain === "reddit.com") return null;
+
     article.link = link[1];
     article.description = null;
-    article.author = getRootDomain(link[1]) + " via reddit";
+    article.author = domain + " via reddit";
     return article;
   }
 

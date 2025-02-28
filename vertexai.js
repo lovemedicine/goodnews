@@ -1,3 +1,6 @@
+// you must install gcloud CLI before using vertexai api
+// follow instructions on https://cloud.google.com/sdk/docs/install
+
 import { VertexAI } from "@google-cloud/vertexai";
 
 // Initialize Vertex with your Cloud project and location
