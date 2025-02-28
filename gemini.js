@@ -1,10 +1,8 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { geminiApiKey } from "./config.js";
-import {
-  instructions,
-  destandardizeLabel,
-  getExamplesForPrompt,
-} from "./prompts.js";
+import { instructions } from "./prompts.js";
+import { destandardizeLabel } from "./labels.js";
+import { loadTuningExamples } from "./tuning.js";
 
 const genAI = new GoogleGenerativeAI(geminiApiKey);
 
@@ -16,12 +14,10 @@ export async function askGemini(prompt, modelName = "gemini-2.0-flash") {
     .toLowerCase();
 }
 
-export async function labelTextWithGemini(
-  text,
-  promptName = "structured",
-  standardize = false
-) {
-  const prompt = prompts[promptName];
+export async function labelTextWithGemini(text, wait = true) {
+  // gemini is free but rate-limited to 15 req/min
+  if (wait) await new Promise((r) => setTimeout(r, 4000));
+  const prompt = prompts["structured"];
   const result = await askGemini(prompt.create(text), prompt.model);
   return standardize ? prompt.standardize(result) : result;
 }
@@ -136,7 +132,7 @@ export const prompts = {
   structured: {
     create: function (text) {
       const parts = [{ text: instructions }];
-      const examples = getExamplesForPrompt();
+      const examples = loadTuningExamples();
 
       examples.forEach(({ text, expectedLabel }) => {
         parts.push({ text: `input: ${text}` });

@@ -1,7 +1,10 @@
 import { convert } from "html-to-text";
 import { labelTextWithGemini } from "./gemini.js";
+import { labelTextWithVertexAi } from "./vertexai.js";
 import { getFeeds, fetchNewArticles } from "./fetchArticles.js";
 import { Article, Feed } from "./db.js";
+import { labelingModel } from "./config.js";
+import { standardizeLabel } from "./labels.js";
 
 async function findArticle(article) {
   return await Article.findOne({
@@ -56,6 +59,10 @@ function isOpinion({ link, title }) {
   );
 }
 
+function isGood({ title }) {
+  return title.match(/YOU LOVE TO SEE IT/i);
+}
+
 function getTextForLabeling(article) {
   if (!article.description) return article.title;
 
@@ -70,6 +77,10 @@ function getTextForLabeling(article) {
 }
 
 const feeds = await getFeeds();
+const labelingFn = {
+  gemini: labelTextWithGemini,
+  vertex: labelTextWithVertexAi,
+}[labelingModel];
 
 for (let i = 0; i < feeds.length; i++) {
   const feed = feeds[i];
@@ -89,15 +100,16 @@ for (let i = 0; i < feeds.length; i++) {
       if (isOpinion(article)) {
         article.label = "opinion";
         console.log(article.link);
+      } else if (isGood(article)) {
+        article.label = "good";
+        console.log(article.link);
       } else {
         const text = getTextForLabeling(article);
         console.log(text);
-        article.label = await labelTextWithGemini(text, "structured", true);
+        article.label = standardizeLabel(await labelingFn(text));
       }
       await saveArticle(article);
       console.log(article.label);
-      // gemini is free but rate-limited to 15 req/min
-      await new Promise((r) => setTimeout(r, 4000));
     }
   }
 

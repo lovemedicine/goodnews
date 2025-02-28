@@ -1,5 +1,6 @@
 import Parser from "rss-parser";
 import { Feed } from "./db.js";
+import { convertRedditArticle } from "./reddit.js";
 
 const parser = new Parser({ customFields: { item: ["description"] } });
 const feedUrls = [
@@ -21,6 +22,9 @@ const feedUrls = [
   ["The American Prospect", "https://prospect.org/api/rss/content.rss"],
   ["Common Dreams", "https://www.commondreams.org/feeds/news.rss"],
   ["The Lever", "https://www.levernews.com/tag/you-love-to-see-it/rss/"],
+  ["/r/news", "https://www.reddit.com/r/news/new/.rss"],
+  ["/r/goodnews", "https://www.reddit.com/r/goodnews/new/.rss"],
+  ["Labor Notes", "https://labornotes.org/feed"],
   // ["Chicago Tribune", "https://www.chicagotribune.com/feed/"],
   // ["San Jose Mercury News", "https://www.mercurynews.com/news/feed/"],
   // ["NBC News", "https://feeds.nbcnews.com/nbcnews/public/news"],
@@ -51,7 +55,13 @@ export async function getFeeds() {
 export async function fetchNewArticles(feed) {
   const { id, url, last_published_at } = feed;
   const parsedFeed = await parser.parseURL(url);
-  return parsedFeed.items
+  let items = parsedFeed.items;
+
+  if (url.match(/reddit.com/i)) {
+    items = items.map(convertRedditArticle).filter((item) => !!item);
+  }
+
+  return items
     .filter((item) => item.isoDate > (last_published_at || ""))
     .map((article) => ({ ...article, feedId: id }));
 }

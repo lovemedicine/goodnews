@@ -1,8 +1,9 @@
 import ollama from "ollama";
-import { destandardizeLabel, getExamplesForPrompt } from "./prompts.js";
+import { destandardizeLabel } from "./labels.js";
+import { loadTuningExamples } from "./tuning.js";
 
 function multiShotPrompt(text, max = null) {
-  const examples = getExamplesForPrompt();
+  const examples = loadTuningExamples();
   const prompt = examples
     .slice(0, max || examples.length)
     .map(
@@ -15,15 +16,15 @@ function multiShotPrompt(text, max = null) {
   return prompt + `\n\nProvided text: ${text}\nClassification: `;
 }
 
+// const model = "classifier-3.1";
+const model = "classifier-deepseek-r1:1.5b";
+
 export async function labelTextWithOllama(text, multiShot = false) {
   const prompt = multiShot ? multiShotPrompt(text, multiShot) : text;
   const response = await ollama.generate({
-    model: "classifier-3.1",
+    model,
     stream: false,
     prompt,
-    options: {
-      temperature: 0,
-    },
   });
   return response.response;
 }
