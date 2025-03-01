@@ -25,10 +25,11 @@ const feedUrls = [
   ["/r/news", "https://www.reddit.com/r/news/new/.rss"],
   ["/r/goodnews", "https://www.reddit.com/r/goodnews/new/.rss"],
   ["Labor Notes", "https://labornotes.org/feed"],
-  // ["Chicago Tribune", "https://www.chicagotribune.com/feed/"],
-  // ["San Jose Mercury News", "https://www.mercurynews.com/news/feed/"],
-  // ["NBC News", "https://feeds.nbcnews.com/nbcnews/public/news"],
-  // ["People's Dispatch", "https://peoplesdispatch.org/feed/"],
+  ["NPR News", "https://feeds.npr.org/1002/rss.xml"],
+  ["Chicago Tribune", "https://www.chicagotribune.com/feed/"],
+  ["San Jose Mercury News", "https://www.mercurynews.com/news/feed/"],
+  ["NBC News", "https://feeds.nbcnews.com/nbcnews/public/news"],
+  ["People's Dispatch", "https://peoplesdispatch.org/feed/"],
 ];
 
 async function findFeedByUrl(url) {

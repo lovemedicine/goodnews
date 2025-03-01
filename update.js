@@ -74,6 +74,8 @@ const labelingFn = {
   vertex: labelTextWithVertexAi,
 }[labelingModel];
 
+console.log("labeling with", labelingModel);
+
 for (let i = 0; i < feeds.length; i++) {
   const feed = feeds[i];
   console.log("*******************");
