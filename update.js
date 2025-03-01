@@ -1,10 +1,10 @@
-import { convert } from "html-to-text";
 import { labelTextWithGemini } from "./gemini.js";
 import { labelTextWithVertexAi } from "./vertexai.js";
 import { getFeeds, fetchNewArticles } from "./fetchArticles.js";
 import { Article, Feed } from "./db.js";
 import { labelingModel } from "./config.js";
 import { standardizeLabel } from "./labels.js";
+import { shortDescription } from "./util.js";
 
 async function findArticle(article) {
   return await Article.findOne({
@@ -65,14 +65,7 @@ function isGood({ title }) {
 
 function getTextForLabeling(article) {
   if (!article.description) return article.title;
-
-  const description = convert(article.description, {
-    wordwrap: false,
-    selectors: [
-      { selector: "a", options: { ignoreHref: true } },
-      { selector: "img", format: "skip" },
-    ],
-  });
+  const description = shortDescription(article.description);
   return article.title + ". " + description.split("\n")[0];
 }
 

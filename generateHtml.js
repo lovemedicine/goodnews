@@ -1,6 +1,7 @@
 import dot from "dot";
 import fs from "fs";
 import { loadArticles } from "./generateFeed.js";
+import { shortDescription } from "./util.js";
 
 function getUpdatedAt() {
   const dateParts = new Date().toString().split(" ");
@@ -11,7 +12,11 @@ function getUpdatedAt() {
 
 export async function generateHtml(title, labels, filename) {
   const template = fs.readFileSync("html-template.txt");
-  const articles = await loadArticles(labels);
+  const articles = (await loadArticles(labels)).map((article) => ({
+    ...article.dataValues,
+    description: shortDescription(article.description),
+  }));
+  console.log(articles);
   const updated = getUpdatedAt();
 
   const tempFn = dot.template(template);
