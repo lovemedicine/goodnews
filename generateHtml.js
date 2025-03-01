@@ -4,10 +4,17 @@ import { loadArticles } from "./generateFeed.js";
 import { shortDescription } from "./util.js";
 
 function getUpdatedAt() {
-  const dateParts = new Date().toString().split(" ");
-  const date = dateParts.slice(1, 4).join(" ");
-  const time = dateParts[4].split(":").slice(0, 2).join(":") + " Eastern";
-  return date + " " + time;
+  const time = new Intl.DateTimeFormat("en-US", {
+    timeZone: "America/New_York",
+    weekday: "long",
+    month: "short",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  }).format(new Date());
+  const timeParts = time.split(", ");
+  return `${timeParts[0]}, ${timeParts[1]} at ${timeParts[2]} Eastern`;
 }
 
 export async function generateHtml(title, labels, filename) {
