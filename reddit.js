@@ -10,7 +10,7 @@ export function convertRedditArticle(article) {
 
     article.link = link[1];
     article.description = null;
-    article.author = domain + " via reddit";
+    article.author = domain;
     return article;
   }
 

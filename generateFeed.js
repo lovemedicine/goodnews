@@ -2,19 +2,22 @@ import fs from "fs";
 import RSS from "rss";
 import { Article, Feed } from "./db.js";
 
-export async function generateFeed(name, labels) {
-  const articles = await Article.findAll({
+export async function loadArticles(labels) {
+  return await Article.findAll({
     where: { label: labels },
     order: [["published_at", "DESC"]],
     limit: 20,
     include: Feed,
   });
+}
+
+export async function generateFeed(name, labels) {
+  const articles = await loadArticles(labels);
   const lastPublishedAt = articles.reduce(
     (last, article) =>
       article.published_at > last ? article.published_at : last,
     null
   );
-
   const feed = new RSS({
     title: `welcome.news - ${name}`,
     description: `all the ${name} news that's fit to print`,

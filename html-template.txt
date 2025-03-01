@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>welcome.news - {{=it.title}}</title>
+    <style>
+      body {
+        font-family: Helvetica, Arial, sans-serif;
+      }
+      .main {
+        width: 600px;
+        margin: 2em auto;
+      }
+      .feed-title {
+        text-align: center;
+        font-size: 3em;
+        font-weight: bold;
+      }
+      .updated {
+        text-align: center;
+        margin-top: 1em;
+        margin-bottom: 1em;
+      }
+      .article {
+        padding-top: 1em;
+        padding-bottom: 1em;
+        border-bottom: 1px solid #ccc;
+      }
+      .title {
+        font-size: 1.5em;
+        font-weight: bold;
+      }
+      .source {
+        margin-top: 0.3em;
+        font-size: 1em;
+        color: #888;
+      }
+      .content {
+        margin-top: 0.3em;
+      }
+      a {
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="feed-title">{{=it.title}}</div>
+      <div class="updated">{{=it.updated}}</div>
+      {{~it.articles :article:index}}
+      <div class="article">
+        <div class="title">
+          <a href="{{=article.url}}">{{=article.title}}</a>
+        </div>
+        <div class="source">
+          {{? article.author}}{{=article.author}}, {{?}}
+          {{=article.Feed.name}}
+        </div>
+
+        {{? article.description }}
+        <div class="content">
+          {{=article.description}}
+        </div>
+        {{?}}
+      </div>
+      {{~}}
+    </div>
+  </body>
+</html>
