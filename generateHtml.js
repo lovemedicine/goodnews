@@ -16,7 +16,6 @@ export async function generateHtml(title, labels, filename) {
     ...article.dataValues,
     description: shortDescription(article.description),
   }));
-  console.log(articles);
   const updated = getUpdatedAt();
 
   const tempFn = dot.template(template);

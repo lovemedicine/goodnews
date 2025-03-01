@@ -65,8 +65,7 @@ function isGood({ title }) {
 
 function getTextForLabeling(article) {
   if (!article.description) return article.title;
-  const description = shortDescription(article.description);
-  return article.title + ". " + description.split("\n")[0];
+  return article.title + ". " + shortDescription(article.description);
 }
 
 const feeds = await getFeeds();
