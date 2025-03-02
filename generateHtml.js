@@ -1,6 +1,6 @@
 import dot from "dot";
 import fs from "fs";
-import { loadArticles } from "./generateFeed.js";
+import { loadArticles, urlForArticle } from "./generateFeed.js";
 import { shortDescription } from "./util.js";
 
 function getUpdatedAt() {
@@ -21,6 +21,7 @@ export async function generateHtml(title, labels, filename) {
   const template = fs.readFileSync("html-template.txt");
   const articles = (await loadArticles(labels)).map((article) => ({
     ...article.dataValues,
+    url: urlForArticle(article),
     description: shortDescription(article.description),
   }));
   const updated = getUpdatedAt();

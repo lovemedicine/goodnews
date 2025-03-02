@@ -52,7 +52,7 @@
       {{~it.articles :article:index}}
       <div class="article">
         <div class="title">
-          <a href="{{=article.url}}">{{=article.title}}</a>
+          <a href="{{=article.url}}" target="_blank">{{=article.title}}</a>
         </div>
         <div class="source">
           {{? article.author}}{{=article.author}}, {{?}}

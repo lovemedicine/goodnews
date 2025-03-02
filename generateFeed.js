@@ -11,6 +11,17 @@ export async function loadArticles(labels) {
   });
 }
 
+export async function urlForArticle(article) {
+  const paywallFeeds = [
+    "New York Times",
+    "Washington Post",
+    "Wall Street Journal",
+  ];
+  return paywallFeeds.includes(article.Feed.name)
+    ? `https://archive.is/2025/${article.url}`
+    : article.url;
+}
+
 export async function generateFeed(name, labels) {
   const articles = await loadArticles(labels);
   const lastPublishedAt = articles.reduce(
@@ -29,19 +40,10 @@ export async function generateFeed(name, labels) {
   });
 
   articles.forEach((article) => {
-    const paywallFeeds = [
-      "New York Times",
-      "Washington Post",
-      "Wall Street Journal",
-    ];
-    const url = paywallFeeds.includes(article.Feed.name)
-      ? `https://archive.is/2025/${article.url}`
-      : article.url;
-
     feed.item({
       title: article.title,
       description: article.description,
-      url,
+      url: urlForArticle(article),
       date: article.published_at,
       author: article.creator || article.Feed.name,
       guid: article.url,
