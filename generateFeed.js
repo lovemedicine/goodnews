@@ -11,7 +11,7 @@ export async function loadArticles(labels) {
   });
 }
 
-export async function urlForArticle(article) {
+export function urlForArticle(article) {
   const paywallFeeds = [
     "New York Times",
     "Washington Post",
