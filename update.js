@@ -25,7 +25,7 @@ async function saveArticle({
   const article = await Article.create({
     url: getPermalink({ guid, link }),
     title,
-    description,
+    description: description?.trim(),
     author: creator,
     label,
     published_at: isoDate,

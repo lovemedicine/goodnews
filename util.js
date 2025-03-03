@@ -7,5 +7,7 @@ export function shortDescription(description) {
       { selector: "a", options: { ignoreHref: true } },
       { selector: "img", format: "skip" },
     ],
-  }).split("\n")[0];
+  })
+    .trim()
+    .split("\n")[0];
 }
