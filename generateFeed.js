@@ -1,12 +1,14 @@
 import fs from "fs";
 import RSS from "rss";
+import { Op } from "sequelize";
 import { Article, Feed } from "./db.js";
 
-export async function loadArticles(labels) {
+export async function loadArticles(labels, limit = 20) {
+  let oneDayAgo = new Date(new Date() - 24 * 60 * 60 * 1000);
   return await Article.findAll({
-    where: { label: labels },
+    where: { label: labels, published_at: { [Op.gt]: oneDayAgo } },
     order: [["published_at", "DESC"]],
-    limit: 20,
+    limit,
     include: Feed,
   });
 }

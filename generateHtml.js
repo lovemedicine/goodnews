@@ -19,7 +19,7 @@ function getUpdatedAt() {
 
 export async function generateHtml(title, labels, filename) {
   const template = fs.readFileSync("html-template.txt");
-  const articles = (await loadArticles(labels)).map((article) => ({
+  const articles = (await loadArticles(labels, null)).map((article) => ({
     ...article.dataValues,
     url: urlForArticle(article),
     description: shortDescription(article.description),
