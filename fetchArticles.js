@@ -23,7 +23,7 @@ const feedUrls = [
   ["Common Dreams", "https://www.commondreams.org/feeds/news.rss"],
   ["The Lever", "https://www.levernews.com/tag/you-love-to-see-it/rss/"],
   ["/r/news", "https://www.reddit.com/r/news/new/.rss"],
-  ["/r/goodnews", "https://www.reddit.com/r/goodnews/new/.rss"],
+  // ["/r/goodnews", "https://www.reddit.com/r/goodnews/new/.rss"],
   ["Labor Notes", "https://labornotes.org/feed"],
   ["NPR News", "https://feeds.npr.org/1002/rss.xml"],
   // ["Chicago Tribune", "https://www.chicagotribune.com/feed/"],
