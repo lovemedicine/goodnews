@@ -1,13 +1,14 @@
 {
   "scripts": {
     "update": "node update.js",
-    "generate": "node generate.js"
+    "generate": "node generate.js",
+    "illustrate": "node generateImages.js"
   },
   "type": "module",
   "dependencies": {
     "@google-cloud/vertexai": "^1.9.3",
     "@google/generative-ai": "^0.21.0",
-    "@huggingface/inference": "^3.3.6",
+    "@huggingface/inference": "^3.6.2",
     "csv-parse": "^5.6.0",
     "csv-stringify": "^6.5.2",
     "dot": "^1.1.3",

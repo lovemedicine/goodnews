@@ -11,3 +11,8 @@ export function shortDescription(description) {
     .trim()
     .split("\n")[0];
 }
+
+export function getTextForLabeling(article) {
+  if (!article.description) return article.title;
+  return article.title + ". " + shortDescription(article.description);
+}

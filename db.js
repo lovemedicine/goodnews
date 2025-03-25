@@ -54,6 +54,11 @@ export const Article = sequelize.define(
       type: DataTypes.DATE,
       allowNull: false,
     },
+    hash: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      unique: true,
+    },
   },
   { underscored: true }
 );

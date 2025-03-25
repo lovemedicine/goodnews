@@ -4,7 +4,7 @@ import { getFeeds, fetchNewArticles } from "./fetchArticles.js";
 import { Article, Feed } from "./db.js";
 import { labelingModel } from "./config.js";
 import { standardizeLabel } from "./labels.js";
-import { shortDescription } from "./util.js";
+import { getTextForLabeling } from "./util.js";
 
 async function findArticle(article) {
   return await Article.findOne({
@@ -61,11 +61,6 @@ function isOpinion({ link, title }) {
 
 function isGood({ title }) {
   return title.match(/YOU LOVE TO SEE IT/i);
-}
-
-function getTextForLabeling(article) {
-  if (!article.description) return article.title;
-  return article.title + ". " + shortDescription(article.description);
 }
 
 const feeds = await getFeeds();

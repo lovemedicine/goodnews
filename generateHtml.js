@@ -6,12 +6,12 @@ import { shortDescription } from "./util.js";
 function getUpdatedAt() {
   const time = new Intl.DateTimeFormat("en-US", {
     timeZone: "America/New_York",
-    weekday: "long",
+    weekday: "short",
     month: "short",
     day: "2-digit",
     hour: "2-digit",
     minute: "2-digit",
-    hour12: false,
+    hour12: true,
   }).format(new Date());
   const timeParts = time.split(", ");
   return `${timeParts[0]}, ${timeParts[1]} at ${timeParts[2]} Eastern`;

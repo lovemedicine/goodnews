@@ -18,6 +18,7 @@ export function urlForArticle(article) {
     "New York Times",
     "Washington Post",
     "Wall Street Journal",
+    "Bloomberg",
   ];
   return paywallFeeds.includes(article.Feed.name)
     ? `https://archive.is/2025/${article.url}`
