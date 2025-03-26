@@ -1,9 +1,9 @@
 import fs from "fs";
 import crypto from "crypto";
 import { Op } from "sequelize";
-import { Article } from "./db.js";
+import { Article, Feed } from "./db.js";
 import { generateImage } from "./images.js";
-import { getTextForLabeling } from "./util.js";
+import { getTextForLabeling, getArticleImagePath } from "./util.js";
 
 export async function loadArticles(recent = true, limit = 10) {
   const oneDayAgo = new Date(new Date() - 24 * 60 * 60 * 1000);
@@ -42,7 +42,7 @@ export async function generateImages(recent = true) {
     const article = articles[i];
     console.log(article.title);
     await ensureArticleHash(article);
-    const filename = `feeds/images/image-${article.hash}.jpg`;
+    const filename = getArticleImagePath(article);
 
     if (fs.existsSync(filename)) {
       console.log("already illustrated this image, skipping...");

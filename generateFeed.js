@@ -20,7 +20,7 @@ export function urlForArticle(article) {
     "Wall Street Journal",
     "Bloomberg",
   ];
-  return paywallFeeds.includes(article.Feed.name)
+  return paywallFeeds.includes(article.Feed?.name)
     ? `https://archive.is/2025/${article.url}`
     : article.url;
 }
@@ -48,7 +48,7 @@ export async function generateFeed(name, labels) {
       description: article.description,
       url: urlForArticle(article),
       date: article.published_at,
-      author: article.creator || article.Feed.name,
+      author: article.creator || article.Feed?.name,
       guid: article.url,
     });
   });

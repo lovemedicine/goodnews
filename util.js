@@ -16,3 +16,7 @@ export function getTextForLabeling(article) {
   if (!article.description) return article.title;
   return article.title + ". " + shortDescription(article.description);
 }
+
+export function getArticleImagePath(article) {
+  return `feeds/images/image-${article.hash}.jpg`;
+}

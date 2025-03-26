@@ -1,7 +1,7 @@
 import dot from "dot";
 import fs from "fs";
 import { loadArticles, urlForArticle } from "./generateFeed.js";
-import { shortDescription } from "./util.js";
+import { shortDescription, getArticleImagePath } from "./util.js";
 
 function getUpdatedAt() {
   const time = new Intl.DateTimeFormat("en-US", {
@@ -19,11 +19,17 @@ function getUpdatedAt() {
 
 export async function generateHtml(title, labels, filename) {
   const template = fs.readFileSync("html-template.txt");
-  const articles = (await loadArticles(labels, null)).map((article) => ({
-    ...article.dataValues,
-    url: urlForArticle(article),
-    description: shortDescription(article.description),
-  }));
+  const articles = (await loadArticles(labels, null))
+    .map((article) => ({
+      ...article.dataValues,
+      url: urlForArticle(article),
+      description: shortDescription(article.description),
+      feedName: article.dataValues.Feed?.name,
+    }))
+    .filter((article) => {
+      const filename = getArticleImagePath(article);
+      return fs.existsSync(filename);
+    });
   const updated = getUpdatedAt();
 
   const tempFn = dot.template(template);
