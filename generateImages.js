@@ -42,7 +42,7 @@ export async function generateImages(recent = true) {
     const article = articles[i];
     console.log(article.title);
     await ensureArticleHash(article);
-    const filename = `images/image-${article.hash}.jpg`;
+    const filename = `feeds/images/image-${article.hash}.jpg`;
 
     if (fs.existsSync(filename)) {
       console.log("already illustrated this image, skipping...");

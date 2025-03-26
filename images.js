@@ -27,7 +27,7 @@ function blobToBuffer(blob) {
 
 function randomThemesList(num = 5) {
   let themes =
-    "plants, flowers, ecology, gardens, animals, insects, biology, people, dance, music, ocean, water, cloudscape, landscape, seasons, architecture, invention, resilience, interdependence, surprise, nourishment, determination, courage, peace, hope, creativity, harmony, revolution, liberation, freedom, magic, beauty, justice, cosmos, knowledge, wisdom, diversity, love".split(
+    "plants, flowers, ecology, gardens, animals, insects, microbiology, people, community, collaboration, dance, music, ocean, water, cloudscape, landscape, geology, seasons, architecture, invention, resilience, interdependence, surprise, nourishment, persistence, courage, peace, hope, creativity, harmony, revolution, liberation, freedom, magic, beauty, justice, cosmos, knowledge, wisdom, diversity, love, solidarity, nonlinearity, compassion, queerness, glitches, anomalies".split(
       ", "
     );
   num = Math.min(num, themes.length);
@@ -57,13 +57,20 @@ export async function generateImage(headline, filename) {
     "diego rivera",
     "r.c. gorman",
     "tarsila do amaral",
+    "salvador dali",
+    "giorgio de chirico",
+    "jean giraud",
+    "frank frazetta",
+    "barney bubbles",
+    "roger dean",
   ];
   const artist = artists[Math.floor(Math.random() * artists.length)];
   console.log(artist);
   const themes = randomThemesList();
   console.log(themes);
   const prompt = [
-    `A complex artwork by ${artist}, with an overall tone of hope, resilience, and reassurance, with a relaxing color palette, incorporating the following themes: ${themes}. No text should appear in the image.`,
+    `A complex and intricate artwork by ${artist}, with an overall tone of hope and tranquility, soft colors, muted palette, low saturation, incorporating the following themes: ${themes}. No text should appear in the image.`,
+    `${headline}, in the style of ${artist}, with an overall tone of hope and reassurance, with a muted and relaxing color palette, incorporating the following elements: ${themes}. No text should appear in the image.`,
     `Create a professional, high-quality, and artistic illustration to accompany a news article titled: ${headline}. The image should visually represent the essence of the topic in an engaging and thought-provoking way, using a mix of modern and classic artistic styles. The artwork should feel polished and suitable for a reputable news website, blending rich colors and intricate details. No text should appear in the image.`,
     `a pulitzer prize winning black and white photograph depicting the following news: ${headline}`,
     `${artist} artwork, not containing any text or letters, inspired by the following news: ${headline}`,

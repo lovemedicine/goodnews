@@ -4,4 +4,3 @@ goodnews.db
 notes
 feeds/*
 tuning/*.jsonl
-images/*

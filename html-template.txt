@@ -24,21 +24,28 @@
         margin-bottom: 1em;
       }
       .article {
-        padding-top: 1em;
-        padding-bottom: 1em;
+        padding-top: 1.5em;
+        padding-bottom: 1.5em;
         border-bottom: 1px solid #ccc;
+      }
+      .image {
+        margin-top: 0.3em;
+      }
+      .image img {
+        width: 600px;
       }
       .title {
         font-size: 1.5em;
         font-weight: bold;
+        margin-top: 0.2em;
       }
       .source {
-        margin-top: 0.3em;
+        margin-top: 0.2em;
         font-size: 1em;
         color: #888;
       }
       .content {
-        margin-top: 0.3em;
+        margin-top: 0.5em;
       }
       a {
         text-decoration: none;
@@ -51,6 +58,9 @@
       <div class="updated">{{=it.updated}}</div>
       {{~it.articles :article:index}}
       <div class="article">
+        <div class="image">
+          <img src="images/image-{{=article.hash}}.jpg">
+        </div>
         <div class="title">
           <a href="{{=article.url}}" target="_blank">{{=article.title}}</a>
         </div>
