@@ -5,7 +5,7 @@ import { Article, Feed } from "./db.js";
 import { generateImage } from "./images.js";
 import { getTextForLabeling, getArticleImagePath } from "./util.js";
 
-export async function loadArticles(recent = true, limit = 10) {
+export async function loadArticles(recent = true, limit) {
   const oneDayAgo = new Date(new Date() - 24 * 60 * 60 * 1000);
   const where = { label: "good" };
 
@@ -31,8 +31,8 @@ export async function ensureArticleHash(article) {
   }
 }
 
-export async function generateImages(recent = true) {
-  const articles = await loadArticles(recent);
+export async function generateImages(recent = true, limit = 10) {
+  const articles = await loadArticles(recent, limit);
   console.log("**************");
   console.log(`generating images for ${articles.length} articles`);
 
@@ -55,7 +55,8 @@ export async function generateImages(recent = true) {
 }
 
 const recent = (process.argv[2] || "true") === "true";
+const limit = parseInt(process.argv[3] || "10");
 console.log(recent);
 console.time();
-await generateImages(recent);
+await generateImages(recent, limit);
 console.timeEnd();
