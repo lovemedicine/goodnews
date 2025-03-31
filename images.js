@@ -52,7 +52,6 @@ export async function generateImage(headline, filename) {
     "georgia o'keeffe",
     "pablo picasso",
     "hilma af klint",
-    "jean-michel basquiat",
     "ernie barnes",
     "diego rivera",
     "r.c. gorman",
@@ -63,6 +62,8 @@ export async function generateImage(headline, filename) {
     "frank frazetta",
     "barney bubbles",
     "roger dean",
+    "william blake",
+    "leonardo da vinci",
   ];
   const artist = artists[Math.floor(Math.random() * artists.length)];
   console.log(artist);
