@@ -40,6 +40,7 @@ const feedUrls = [
   ["NPR", "https://feeds.npr.org/1002/rss.xml"],
   ["CNN", "http://rss.cnn.com/rss/edition_us.rss"],
   ["Al Jazeera", "https://www.aljazeera.com/xml/rss/all.xml"],
+  ["BBC", "https://feeds.bbci.co.uk/news/rss.xml"],
   ["The Intercept", "https://theintercept.com/feed/?lang=en"],
   ["Democracy Now", "https://www.democracynow.org/democracynow.rss"],
   ["The American Prospect", "https://prospect.org/api/rss/content.rss"],

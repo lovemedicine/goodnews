@@ -45,7 +45,11 @@ async function updateLastPublished(feed, dateTime) {
 }
 
 function getPermalink({ link, guid }) {
-  if (typeof guid === "string" && guid.match(/^http/i)) {
+  if (
+    typeof guid === "string" &&
+    guid.match(/^http/i) &&
+    !link.match(/aljazeera\.com/) // al jazeera guids don't work as links
+  ) {
     return guid;
   } else {
     return link;

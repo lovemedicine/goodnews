@@ -27,5 +27,9 @@ function convertExamplesToJsonl(baseName = "tuning") {
     .join("\n");
 }
 
-const baseName = process.argv[2];
-fs.writeFileSync(`tuning/${baseName}.jsonl`, convertExamplesToJsonl(baseName));
+["tuning", "validation"].forEach((baseName) => {
+  fs.writeFileSync(
+    `tuning/${baseName}.jsonl`,
+    convertExamplesToJsonl(baseName)
+  );
+});
