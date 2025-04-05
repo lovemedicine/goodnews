@@ -27,7 +27,7 @@ function blobToBuffer(blob) {
 
 function randomThemesList(num = 5) {
   let themes =
-    "plants, flowers, ecology, gardens, animals, insects, microbiology, hands, faces, bodies, community, collaboration, dance, music, ocean, water, cloudscape, landscape, geology, seasons, architecture, invention, resilience, interdependence, surprise, nourishment, persistence, courage, peace, hope, creativity, harmony, revolution, liberation, freedom, magic, beauty, justice, cosmos, knowledge, wisdom, diversity, love, solidarity, nonlinearity, compassion, queerness, glitches, anomalies".split(
+    "plants, flowers, ecology, gardens, animals, insects, microbiology, hands, faces, bodies, community, collaboration, dance, music, ocean, water, cloudscape, landscape, geology, seasons, architecture, invention, resilience, interdependence, surprise, nourishment, persistence, courage, peace, hope, creativity, harmony, revolution, liberation, freedom, magic, beauty, justice, cosmos, knowledge, wisdom, diversity, love, solidarity, nonlinearity, compassion, queerness, glitches, anomalies, leaves, waterfalls, rainbows, dragons, stars, nebula, tools, jungle, desert, mountains, mystery, permaculture, forest".split(
       ", "
     );
   num = Math.min(num, themes.length);
