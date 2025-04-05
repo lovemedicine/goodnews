@@ -43,7 +43,6 @@ const feedUrls = [
   ["The Intercept", "https://theintercept.com/feed/?lang=en"],
   ["Democracy Now", "https://www.democracynow.org/democracynow.rss"],
   ["The American Prospect", "https://prospect.org/api/rss/content.rss"],
-  ["Wired", "https://www.wired.com/feed/rss"],
   ["Common Dreams", "https://www.commondreams.org/feeds/news.rss"],
   ["The Lever", "https://www.levernews.com/tag/you-love-to-see-it/rss/"],
   ["/r/news", "https://www.reddit.com/r/news/new/.rss"],
