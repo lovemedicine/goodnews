@@ -74,6 +74,16 @@
           {{=article.description}}
         </div>
         {{?}}
+
+        {{? article.children }}
+          <ul>
+          {{~article.children :child}}
+            <li>
+              {{=child.feedName}}: <a href="{{=child.url}}" target="_bank">{{=child.title}}</a>
+            </li>
+          {{~}}
+          </ul>
+        {{?}}
       </div>
       {{~}}
     </div>

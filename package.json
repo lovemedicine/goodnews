@@ -2,7 +2,8 @@
   "scripts": {
     "update": "node update.js",
     "generate": "node generate.js",
-    "illustrate": "node generateImages.js"
+    "illustrate": "node generateImages.js",
+    "backup": "scp ubuntu@welcome.news:/var/www/goodnews/goodnews.db \"backups/goodnews-$(date +%Y%m%d_%H%M%S).db\""
   },
   "type": "module",
   "dependencies": {

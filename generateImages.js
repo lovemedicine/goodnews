@@ -7,7 +7,7 @@ import { getTextForLabeling, getArticleImagePath } from "./util.js";
 
 export async function loadArticles(recent = true, limit) {
   const oneDayAgo = new Date(new Date() - 24 * 60 * 60 * 1000);
-  const where = { label: "good" };
+  const where = { label: "good", parent_id: null };
 
   if (recent) {
     where.published_at = { [Op.gt]: oneDayAgo };

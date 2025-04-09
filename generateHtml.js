@@ -19,12 +19,26 @@ function getUpdatedAt() {
 
 export async function generateHtml(title, labels, filename) {
   const template = fs.readFileSync("html-template.txt");
-  const articles = (await loadArticles(labels, null))
+  const allArticles = await loadArticles(labels, null);
+  const childArticles = allArticles.filter((article) =>
+    Boolean(article.parent_id)
+  );
+  const parentArticles = allArticles.filter((article) => !article.parent_id);
+  const childGroups = childArticles.reduce((map, article) => {
+    map[article.parent_id] = [...(map[article.parent_id] || []), article];
+    return map;
+  }, {});
+  const articles = parentArticles
     .map((article) => ({
       ...article.dataValues,
       url: urlForArticle(article),
       description: shortDescription(article.description),
       feedName: article.dataValues.Feed?.name,
+      children: childGroups[article.id]?.map((child) => ({
+        ...child.dataValues,
+        url: urlForArticle(child),
+        feedName: child.dataValues.Feed?.name,
+      })),
     }))
     .filter((article) => {
       const filename = getArticleImagePath(article);
