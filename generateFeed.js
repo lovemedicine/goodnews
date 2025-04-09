@@ -4,7 +4,7 @@ import { Op } from "sequelize";
 import { Article, Feed } from "./db.js";
 
 export async function loadArticles(labels, limit = 20) {
-  let oneDayAgo = new Date(new Date() - 24 * 60 * 60 * 1000);
+  const oneDayAgo = new Date(new Date() - 24 * 60 * 60 * 1000);
   return await Article.findAll({
     where: { label: labels, published_at: { [Op.gt]: oneDayAgo } },
     order: [["published_at", "DESC"]],

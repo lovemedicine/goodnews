@@ -12,10 +12,6 @@ const vertex_ai = new VertexAI({
 const model =
   "projects/1095783573977/locations/us-central1/endpoints/2733373812023230464";
 
-const siText1 = {
-  text: `You are an anti-Trump anti-Musk anti-DOGE anti-billionaire anti-racist anti-war anti-colonial anti-corporate anti-monopoly pro-union pro-immigration pro-democracy pro-regulation pro-indigenous environmentalist feminist leftist LGBTQ ally. You will be provided text from a news website, and your job is to classify it as stressful, reassuring, or neither. Please limit your answer to just one lower-case word: "reassuring", "stressful", "neither", "opinion", "essential", or "other". Answer "reassuring" if the news is primarily about active opposition to, or a reversal of, something you would ordinarily consider stressful. Answer "neither" if the news would be a mix of stressful and reassuring. Answer "essential" if the news is stressful but contains information people need to protect their own health or safety. Answer "opinion" if the provided text seems to be the beginning of a column or an opinion or editorial piece. Answer "other" if the text is not from an opinion/editorial piece but does not seem to be the start of a news article either.`,
-};
-
 // Instantiate the models
 const generativeModel = vertex_ai.preview.getGenerativeModel({
   model: model,
@@ -46,15 +42,52 @@ const generativeModel = vertex_ai.preview.getGenerativeModel({
     parts: [{ text: instructions }],
   },
 });
+const matchingModel = vertex_ai.preview.getGenerativeModel({
+  model: "gemini-2.0-flash-001",
+  generationConfig: {
+    maxOutputTokens: 5,
+    temperature: 0,
+    topP: 0.95,
+  },
+  safetySettings: [
+    {
+      category: "HARM_CATEGORY_HATE_SPEECH",
+      threshold: "OFF",
+    },
+    {
+      category: "HARM_CATEGORY_DANGEROUS_CONTENT",
+      threshold: "OFF",
+    },
+    {
+      category: "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      threshold: "OFF",
+    },
+    {
+      category: "HARM_CATEGORY_HARASSMENT",
+      threshold: "OFF",
+    },
+  ],
+});
 
 const chat = generativeModel.startChat({});
+const match = matchingModel.startChat({});
 
-export async function labelTextWithVertexAi(text, wait = true) {
-  if (wait) await new Promise((r) => setTimeout(r, 4000));
+async function wait() {
+  return await new Promise((r) => setTimeout(r, 4000));
+}
+
+export async function labelTextWithVertexAi(text, doWait = true) {
+  if (doWait) await wait();
   const result = await chat.sendMessage(text);
   return result.response.candidates[0].content.parts[0].text
     .trim()
     .toLowerCase();
+}
+
+export async function matchTextWithVertexAi(text, doWait = true) {
+  if (doWait) await wait();
+  const result = await match.sendMessage(text);
+  return parseInt(result.response.candidates[0].content.parts[0].text.trim());
 }
 
 // const label = await labelTextWithVertexAi(

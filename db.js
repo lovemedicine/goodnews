@@ -59,6 +59,10 @@ export const Article = sequelize.define(
       allowNull: true,
       unique: true,
     },
+    parent_id: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
   },
   { underscored: true }
 );

@@ -9,3 +9,10 @@ Answer "essential" if the news is stressful but contains information that a larg
 Answer "opinion" if the provided text seems to be the beginning of a column, opinion piece, or editorial.
 
 Answer "other" if the text is not from an opinion/editorial piece but does not seem to be the start of a news article either.`;
+
+export function buildMatchingPrompt(headlines) {
+  return (
+    `Below is a list of news headlines numbered 1-${headlines.length}. Is headline 1 identical (for all practical purposes) to headlines 2-${headlines.length}? Your answer should either be the lowest matching headline number, or "0" if there is no match.\n\n` +
+    headlines.map((headline, index) => `${index + 1}: ${headline}`).join("\n\n")
+  );
+}

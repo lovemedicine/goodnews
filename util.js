@@ -12,11 +12,11 @@ export function shortDescription(description) {
     .split("\n")[0];
 }
 
-export function getTextForLabeling(article) {
-  if (!article.description) return article.title;
-  return article.title + ". " + shortDescription(article.description);
+export function getTextForLabeling({ title, description }) {
+  if (!description) return title;
+  return title + ". " + shortDescription(description);
 }
 
-export function getArticleImagePath(article) {
-  return `feeds/images/image-${article.hash}.jpg`;
+export function getArticleImagePath({ hash }) {
+  return `feeds/images/image-${hash}.jpg`;
 }

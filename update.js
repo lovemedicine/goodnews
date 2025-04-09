@@ -1,15 +1,51 @@
+import { Op } from "sequelize";
 import { labelTextWithGemini } from "./gemini.js";
-import { labelTextWithVertexAi } from "./vertexai.js";
+import { labelTextWithVertexAi, matchTextWithVertexAi } from "./vertexai.js";
 import { getFeeds, fetchNewArticles } from "./fetchArticles.js";
 import { Article, Feed } from "./db.js";
 import { labelingModel } from "./config.js";
 import { standardizeLabel } from "./labels.js";
 import { getTextForLabeling } from "./util.js";
+import { buildMatchingPrompt } from "./prompts.js";
 
 async function findArticle(article) {
   return await Article.findOne({
     where: { url: getPermalink(article) },
   });
+}
+
+async function getRecentSoloGoodArticles() {
+  const oneDayAgo = new Date(new Date() - 24 * 60 * 60 * 1000);
+  return await Article.findAll({
+    where: {
+      label: "good",
+      parent_id: null,
+      published_at: { [Op.gt]: oneDayAgo },
+    },
+    order: [["id", "DESC"]],
+  });
+}
+
+async function findParentId({ title, description }) {
+  const articles = [
+    { title, description },
+    ...(await getRecentSoloGoodArticles()),
+  ];
+
+  console.log("recent good articles: ", articles.length - 1);
+
+  if (articles.length < 2) {
+    return null;
+  }
+
+  const headlines = articles.map((article) => getTextForLabeling(article));
+  const prompt = buildMatchingPrompt(headlines);
+  console.log(title);
+  console.log(prompt);
+  const match = await matchTextWithVertexAi(prompt);
+  console.log(match);
+
+  return match === 0 ? null : articles[match - 1].id;
 }
 
 async function saveArticle({
@@ -22,6 +58,9 @@ async function saveArticle({
   isoDate,
   feedId,
 }) {
+  const parent_id =
+    label === "good" ? await findParentId({ title, description }) : null;
+
   const article = await Article.create({
     url: getPermalink({ guid, link }),
     title,
@@ -29,6 +68,7 @@ async function saveArticle({
     author: creator,
     label,
     published_at: isoDate,
+    parent_id,
   });
   // for some reason the feed_id isn't saved when given directly to Article.create()
   // so we use setFeed() instead

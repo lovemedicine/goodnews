@@ -1,0 +1,1 @@
+-- [2025-04-08] ALTER TABLE articles ADD COLUMN parent_id INTEGER;

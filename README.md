@@ -4,5 +4,5 @@ a script that reads news feeds and filters out the sad stuff
 
 ## todo
 
-- experiment with labels and prompting
+- group articles with the same topic
 - support atom feeds
