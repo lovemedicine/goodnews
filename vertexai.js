@@ -10,7 +10,7 @@ const vertex_ai = new VertexAI({
   location: "us-central1",
 });
 const model =
-  "projects/1095783573977/locations/us-central1/endpoints/2733373812023230464";
+  "projects/1095783573977/locations/us-central1/endpoints/2737367238255312896";
 
 // Instantiate the models
 const generativeModel = vertex_ai.preview.getGenerativeModel({
