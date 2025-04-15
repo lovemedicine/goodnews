@@ -14,4 +14,4 @@ await generateFeed("all", [
   "other",
 ]);
 
-await generateHtml("the good", ["good"], "index.html");
+await generateHtml("welcome news", ["good"], "index.html");

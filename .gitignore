@@ -5,3 +5,4 @@ notes
 feeds/*
 tuning/*.jsonl
 backups
+tmp

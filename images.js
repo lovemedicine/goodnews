@@ -1,5 +1,4 @@
 import fs from "fs";
-import crypto from "crypto";
 import { InferenceClient } from "@huggingface/inference";
 import { hfToken } from "./config.js";
 
@@ -41,7 +40,7 @@ function randomThemesList(num = 5) {
   return results.join(", ");
 }
 
-export async function generateImage(headline, filename) {
+export async function generateStockImage(headline, filename) {
   const artists = [
     "paul klee",
     "juan miro",
@@ -81,13 +80,20 @@ export async function generateImage(headline, filename) {
     `an uplifting mix of watercolor, pencil, and collage, with flowy composition, lots of soft color, very little white space, and a medium-brightness background inspired by the following news: ${headline}`,
   ][0];
 
+  await generateImage(
+    prompt,
+    "silhouette, psychedelic, trippy, professional, glossy, clean, meticulous, high saturation, text, letters, newsprint, newspaper, white background, headline, front page",
+    filename
+  );
+}
+
+export async function generateImage(prompt, negativePrompt, filename) {
   const data = {
     inputs: prompt,
     parameters: {
       guidance_scale: 5,
       num_inference_steps: 75,
-      negative_prompt:
-        "silhouette, psychedelic, trippy, professional, glossy, clean, meticulous, high saturation, text, letters, newsprint, newspaper, white background, headline, front page",
+      negative_prompt: negativePrompt,
       width: 800,
       height: 496,
       seed: Math.floor(Math.random() * 1000),

@@ -2,7 +2,7 @@ import fs from "fs";
 import crypto from "crypto";
 import { Op } from "sequelize";
 import { Article, Feed } from "./db.js";
-import { generateImage } from "./images.js";
+import { generateStockImage } from "./images.js";
 import { getTextForLabeling, getArticleImagePath } from "./util.js";
 
 export async function loadArticles(recent = true, limit) {
@@ -50,7 +50,7 @@ export async function generateImages(recent = true, limit = 10) {
     }
 
     const text = getTextForLabeling(article);
-    await generateImage(article.title, filename);
+    await generateStockImage(article.title, filename);
   }
 }
 
