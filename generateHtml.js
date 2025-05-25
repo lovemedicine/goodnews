@@ -28,22 +28,22 @@ export async function generateHtml(title, labels, filename) {
     map[article.parent_id] = [...(map[article.parent_id] || []), article];
     return map;
   }, {});
-  const articles = parentArticles
-    .map((article) => ({
-      ...article.dataValues,
-      url: urlForArticle(article),
-      description: shortDescription(article.description),
-      feedName: article.dataValues.Feed?.name,
-      children: childGroups[article.id]?.map((child) => ({
-        ...child.dataValues,
-        url: urlForArticle(child),
-        feedName: child.dataValues.Feed?.name,
-      })),
-    }))
-    .filter((article) => {
-      const filename = getArticleImagePath(article);
-      return fs.existsSync(filename);
-    });
+  const articles = parentArticles.map((article) => ({
+    ...article.dataValues,
+    url: urlForArticle(article),
+    description: shortDescription(article.description),
+    feedName: article.dataValues.Feed?.name,
+    children: childGroups[article.id]?.map((child) => ({
+      ...child.dataValues,
+      url: urlForArticle(child),
+      feedName: child.dataValues.Feed?.name,
+    })),
+  }));
+  // ONLY FOR WHEN GENERATING IMAGES
+  // .filter((article) => {
+  //   const filename = getArticleImagePath(article);
+  //   return fs.existsSync(filename);
+  // });
   const updated = getUpdatedAt();
 
   const tempFn = dot.template(template);

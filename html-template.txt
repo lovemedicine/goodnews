@@ -58,9 +58,13 @@
       <div class="updated">{{=it.updated}}</div>
       {{~it.articles :article:index}}
       <div class="article">
+        <!--
+        {{? article.hash}}
         <div class="image">
           <img src="images/image-{{=article.hash}}.jpg">
         </div>
+        {{?}}
+        -->
         <div class="title">
           <a href="{{=article.url}}" target="_blank">{{=article.title}}</a>
         </div>
