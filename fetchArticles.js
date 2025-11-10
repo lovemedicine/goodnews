@@ -85,8 +85,16 @@ export async function getFeeds() {
 
 export async function fetchNewArticles(feed) {
   const { id, url, last_published_at } = feed;
-  const parsedFeed = await parser.parseURL(url);
-  let items = parsedFeed.items;
+  let items;
+
+  try {
+    const parsedFeed = await parser.parseURL(url);
+    items = parsedFeed.items;
+  } catch (error) {
+    console.error(error);
+    items = [];
+  }
+
 
   if (url.match(/reddit.com/i)) {
     items = items.map(convertRedditArticle).filter((item) => !!item);
