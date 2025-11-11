@@ -1,6 +1,7 @@
 import Parser from "rss-parser";
 import { Feed } from "./db.js";
 import { convertRedditArticle } from "./reddit.js";
+import { cleanGoogleNewsTitle } from "./util.js"
 
 const parser = new Parser({ customFields: { item: ["description"] } });
 const feedUrls = [
@@ -102,5 +103,5 @@ export async function fetchNewArticles(feed) {
 
   return items
     .filter((item) => item.isoDate > (last_published_at || ""))
-    .map((article) => ({ ...article, feedId: id }));
+    .map((article) => ({ ...article, title: cleanGoogleNewsTitle(article.title), feedId: id }));
 }

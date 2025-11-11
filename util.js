@@ -21,3 +21,10 @@ export function getTextForLabeling({ title, description }) {
 export function getArticleImagePath({ hash }) {
   return `feeds/images/image-${hash}.jpg`;
 }
+
+export function cleanGoogleNewsTitle(title) {
+  const googleNewsSources = ['reuters', 'ap news', 'cnn'];
+  const googleNewsSourcesRegex = googleNewsSources.map(name => "(" + name + ")").join("|");
+  const regex = new RegExp(`\\s+- (${googleNewsSourcesRegex})`, 'i');
+  return title.replace(regex, '');
+}
