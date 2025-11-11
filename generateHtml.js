@@ -35,7 +35,7 @@ export async function generateHtml(title, labels, filename) {
     return {
       ...article.dataValues,
       url: urlForArticle(article),
-      description: cleanDescription === cleanTitle ? '' : cleanDescripton,
+      description: cleanDescription === cleanTitle ? '' : cleanDescription,
       feedName: article.dataValues.Feed?.name,
       children: childGroups[article.id]?.map((child) => ({
         ...child.dataValues,
