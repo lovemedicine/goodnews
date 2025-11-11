@@ -29,11 +29,13 @@ export async function generateHtml(title, labels, filename) {
     return map;
   }, {});
   const articles = parentArticles.map((article) => {
-    const description = shortDescription(article.description).trim().toLowerCase();
+    const cleanDescription = shortDescription(article.description).trim();
+    const cleanTitle = article.title.trim();
+
     return {
       ...article.dataValues,
       url: urlForArticle(article),
-      description: description === article.title ? '' : description,
+      description: cleanDescription === cleanTitle ? '' : cleanDescripton,
       feedName: article.dataValues.Feed?.name,
       children: childGroups[article.id]?.map((child) => ({
         ...child.dataValues,
