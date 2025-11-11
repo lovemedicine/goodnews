@@ -28,17 +28,21 @@ export async function generateHtml(title, labels, filename) {
     map[article.parent_id] = [...(map[article.parent_id] || []), article];
     return map;
   }, {});
-  const articles = parentArticles.map((article) => ({
-    ...article.dataValues,
-    url: urlForArticle(article),
-    description: shortDescription(article.description),
-    feedName: article.dataValues.Feed?.name,
-    children: childGroups[article.id]?.map((child) => ({
-      ...child.dataValues,
-      url: urlForArticle(child),
-      feedName: child.dataValues.Feed?.name,
-    })),
-  }));
+  const articles = parentArticles.map((article) => {
+    const description = shortDescription(article.description).trim().toLowerCase();
+
+    return {
+      ...article.dataValues,
+      url: urlForArticle(article),
+      description: description === article.title ? '' : description,
+      feedName: article.dataValues.Feed?.name,
+      children: childGroups[article.id]?.map((child) => ({
+        ...child.dataValues,
+        url: urlForArticle(child),
+        feedName: child.dataValues.Feed?.name,
+      }
+    };
+  });
   // ONLY FOR WHEN GENERATING IMAGES
   // .filter((article) => {
   //   const filename = getArticleImagePath(article);
