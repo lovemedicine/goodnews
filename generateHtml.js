@@ -30,7 +30,6 @@ export async function generateHtml(title, labels, filename) {
   }, {});
   const articles = parentArticles.map((article) => {
     const description = shortDescription(article.description).trim().toLowerCase();
-
     return {
       ...article.dataValues,
       url: urlForArticle(article),
@@ -40,7 +39,7 @@ export async function generateHtml(title, labels, filename) {
         ...child.dataValues,
         url: urlForArticle(child),
         feedName: child.dataValues.Feed?.name,
-      }
+      })
     };
   });
   // ONLY FOR WHEN GENERATING IMAGES
