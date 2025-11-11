@@ -9,7 +9,8 @@ export function shortDescription(description) {
     ],
   })
     .trim()
-    .split("\n")[0];
+    .split("\n")[0]
+    .replace(/\s+(reuters|ap news)$/i, '');
 }
 
 export function getTextForLabeling({ title, description }) {
