@@ -39,7 +39,7 @@ export async function generateHtml(title, labels, filename) {
         ...child.dataValues,
         url: urlForArticle(child),
         feedName: child.dataValues.Feed?.name,
-      })
+      }))
     };
   });
   // ONLY FOR WHEN GENERATING IMAGES
