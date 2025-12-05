@@ -9,8 +9,10 @@ const vertex_ai = new VertexAI({
   project: "1095783573977",
   location: "us-central1",
 });
+
+// Using tuned model: goodnews-classifier-501
 const model =
-  "projects/1095783573977/locations/us-central1/endpoints/2737367238255312896";
+  "projects/1095783573977/locations/us-central1/endpoints/7477724704434814976";
 
 // Instantiate the models
 const generativeModel = vertex_ai.preview.getGenerativeModel({

@@ -6,3 +6,4 @@ feeds/*
 tuning/*.jsonl
 backups
 tmp
+.DS_Store
