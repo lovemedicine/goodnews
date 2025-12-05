@@ -16,3 +16,4 @@ await generateFeed("all", [
 
 await generateHtml("welcome news", ["good"], "index.html");
 await generateHtml("unwelcome news", ["bad"], "bad.html");
+await generateHtml("neutral news", ["neutral"], "neutral.html");
