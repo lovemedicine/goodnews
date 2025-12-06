@@ -15,12 +15,12 @@ async function findArticle(article) {
 }
 
 async function getRecentSoloGoodArticles() {
-  const twelveHoursAgo = new Date(new Date() - 12 * 60 * 60 * 1000);
+  const oneDayAgo = new Date(new Date() - 24 * 60 * 60 * 1000);
   return await Article.findAll({
     where: {
       label: "good",
       parent_id: null,
-      published_at: { [Op.gt]: twelveHoursAgo },
+      published_at: { [Op.gt]: oneDayAgo },
     },
     order: [["id", "DESC"]],
   });
