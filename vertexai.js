@@ -2,7 +2,7 @@
 // follow instructions on https://cloud.google.com/sdk/docs/install
 
 import { VertexAI } from "@google-cloud/vertexai";
-import { instructions } from "./prompts.js";
+import { instructions, matchingInstructions } from "./prompts.js";
 
 // Initialize Vertex with your Cloud project and location
 const vertex_ai = new VertexAI({
@@ -69,6 +69,9 @@ const matchingModel = vertex_ai.preview.getGenerativeModel({
       threshold: "OFF",
     },
   ],
+  systemInstruction: {
+    parts: [{ text: matchingInstructions }]
+  }
 });
 
 const chat = generativeModel.startChat({});

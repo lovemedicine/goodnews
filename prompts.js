@@ -52,9 +52,85 @@ other:
 "Tune in to a mini-concert with Nation of Language. The New York band performs tracks from their latest album, Dance Called Memory." - this is neither a news article or an opinion piece
 `;
 
+
+export const matchingInstructions = `You will be provided a list of numbered news headlines. You are to determine whether headline 1 is about the same news item (for all practical purposes) as any of the other headlines. Your answer should either be the lowest matching headline number ("2" or higher), or "0" if there is no matching headline.
+
+
+EXAMPLES
+
+Headlines:
+1: Federal judge appears skeptical of Trump's effort to retain control of California National Guard
+2: Starbucks, union workers face off as old tensions over wages spill over
+3: Louisiana is shrinking. Some tribes are fighting to protect what’s left of their communities
+4: From TikTok to the Streets: Conspicuous Wealth & Nepal’s Gen-Z Uprising
+5: New Orleans leaders blast immigration crackdown, pointing to video of agents chasing US citizen
+Answer: 0
+
+Headlines:
+1: Starbucks, union workers face off as old tensions over wages spill over
+2: Red Cups Raised in Rebellion, Starbucks Strike Spreads
+3: Louisiana is shrinking. Some tribes are fighting to protect what’s left of their communities
+4: Local butterfly trackers hope bluetooth tech can unlock secrets of monarch migration
+5: New York Times Escalates Battle Against Perplexity With New Lawsuit
+Answer: 2
+
+Headlines:
+1: New York Times Sues A.I. Start-Up Perplexity Over Use of Copyrighted Work
+2: Thousands protest in Berlin against new German military conscription bill
+3: Arab, Muslim nations reject Israeli exit-only plan for Gaza Rafah crossing
+4: Trump’s Republicans turn on Speaker Mike Johnson as party unity frays
+5: Tunisians step up protests against Saied's crackdown on opposition
+6: New York Times Escalates Battle Against Perplexity With New Lawsuit
+Answer: 6
+
+1: US federal judge orders release of Epstein grand jury materials
+2: From TikTok to the Streets: Conspicuous Wealth & Nepal’s Gen-Z Uprising
+3: Grand jury transcripts from abandoned Epstein investigation in Florida ordered released
+4: How One Black Labor Union Changed American History
+5: Tunisians step up protests against Saied's crackdown on opposition
+6: Spirit Airlines scraps plan to furlough up to 365 pilots
+Answer: 3
+
+Headlines:
+1: Meta delays release of Phoenix mixed-reality glasses to 2027, Business Insider reports
+2: Protest in Hamburg as German lawmakers approve plan to attract more military recruits
+3: Grand jury transcripts from abandoned Epstein investigation in Florida ordered released
+4: Federal judge appears skeptical of Trump's effort to retain control of California National Guard
+5: Massachusetts court hears arguments in lawsuit alleging Meta designed apps to be addictive to kids
+Answer: 0
+
+Headlines:
+1: Ireland among countries boycotting Eurovision after Israel allowed to compete
+2: At least 4 countries pull out of 2026 Eurovision contest over Israel's participation
+3: Spirit Airlines scraps plan to furlough up to 365 pilots
+4: Education Department workers targeted in layoffs are returning to tackle civil rights backlog
+Answer: 2
+
+Headlines:
+1: Florida lawmakers urge Trump to reject drilling off state's western coast
+2: CPS reports 2% increase in measles vaccination rate
+3: West Contra Costa school staff strike for second day as union says no progress made in negotiations
+4: Florida congressional Republicans tell Trump to keep oil drilling off state’s coasts
+Answer: 4
+
+Headlines:
+1: Thousands protest in Berlin against new German military conscription bill
+2: Meta delays release of Phoenix mixed-reality glasses to 2027, Business Insider reports
+3: Judge Rules Trump Exceeded Authority by Holding Deportees at Guantánamo
+4: Protest in Hamburg as German lawmakers approve plan to attract more military recruits
+5: Trump signs memo to align US child vaccines with certain other countries
+Answer: 4
+
+Headlines:
+1: Louisiana is shrinking. Some tribes are fighting to protect what’s left of their communities
+2: Florida congressional Republicans tell Trump to keep oil drilling off state’s coasts
+3: Education Department workers targeted in layoffs are returning to tackle civil rights backlog
+4: New Orleans leaders blast immigration crackdown, pointing to video of agents chasing US citizen
+Answer: 0
+`;
+
 export function buildMatchingPrompt(headlines) {
-  return (
-    `Below is a list of news headlines numbered 1-${headlines.length}. Is headline 1 identical (for all practical purposes) to headlines 2-${headlines.length}? Your answer should either be the lowest matching headline number, or "0" if there is no match.\n\n` +
-    headlines.map((headline, index) => `${index + 1}: ${headline}`).join("\n\n")
-  );
+  return `Headlines:\n` +
+    headlines.map((headline, index) => `${index + 1}: ${headline}`).join("\n") +
+    `\nAnswer: `;
 }
