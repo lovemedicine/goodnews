@@ -39,7 +39,7 @@ const feedUrls = [
   ["Bloomberg", "https://feeds.bloomberg.com/markets/news.rss"],
   ["Bloomberg", "https://feeds.bloomberg.com/politics/news.rss"],
   ["NPR", "https://feeds.npr.org/1002/rss.xml"],
-  ["CNN", "https://news.google.com/search?q=site%3Acnn.com%20when%3A1h&hl=en-US&gl=US&ceid=US%3Aen"],
+  ["CNN", "https://news.google.com/rss/search?q=site%3Acnn.com%20when%3A1h&hl=en-US&gl=US&ceid=US%3Aen"],
   ["Al Jazeera", "https://www.aljazeera.com/xml/rss/all.xml"],
   ["BBC", "https://feeds.bbci.co.uk/news/rss.xml"],
   ["Financial Times", "https://www.ft.com/rss/home/international"],
