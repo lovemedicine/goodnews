@@ -1,7 +1,7 @@
 import dot from "dot";
 import fs from "fs";
 import { loadArticles, urlForArticle } from "./generateFeed.js";
-import { shortDescription, getArticleImagePath } from "./util.js";
+import { shortDescription } from "./util.js";
 
 function getUpdatedAt() {
   const time = new Intl.DateTimeFormat("en-US", {

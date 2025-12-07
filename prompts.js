@@ -127,6 +127,14 @@ Headlines:
 3: Education Department workers targeted in layoffs are returning to tackle civil rights backlog
 4: New Orleans leaders blast immigration crackdown, pointing to video of agents chasing US citizen
 Answer: 0
+
+Headlines:
+1. India says no advisory to stop clean energy funding
+2. Christmas celebrations return to Bethlehem after 2 years of war in Gaza
+3. Waymo will recall software after its self-driving cars passed stopped school buses
+4. Judge rejects Trump administration's bid to toss lawsuit challenging Guantánamo migrant detentions
+5. San Diego considers $30 million settlement in police-involved shooting death of Black teen
+Answer: 0
 `;
 
 export function buildMatchingPrompt(headlines) {
