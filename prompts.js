@@ -83,6 +83,14 @@ Headlines:
 6: New York Times Escalates Battle Against Perplexity With New Lawsuit
 Answer: 6
 
+Headlines:
+1: The Vatican held these sacred Indigenous artifacts for more than a century. They’re on their way home
+2: Nearly 900 acres of land on Yosemite border returned to tribe forced out 175 years ago
+3: Strategy’s stock slide leaves bitcoin’s biggest booster with dwindling options
+4: The power crunch threatening America’s AI ambitions
+5: Tesla’s Sky High Valuation Prompts Morgan Stanley to Cut Rating
+Answer: 0
+
 1: US federal judge orders release of Epstein grand jury materials
 2: From TikTok to the Streets: Conspicuous Wealth & Nepal’s Gen-Z Uprising
 3: Grand jury transcripts from abandoned Epstein investigation in Florida ordered released
