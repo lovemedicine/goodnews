@@ -3,6 +3,7 @@
 
 import { VertexAI } from "@google-cloud/vertexai";
 import { instructions, matchingInstructions } from "./prompts.js";
+import util from "util"
 
 // Initialize Vertex with your Cloud project and location
 const vertex_ai = new VertexAI({
@@ -47,7 +48,7 @@ const generativeModel = vertex_ai.preview.getGenerativeModel({
 const matchingModel = vertex_ai.preview.getGenerativeModel({
   model: "gemini-2.0-flash-001",
   generationConfig: {
-    maxOutputTokens: 5,
+    maxOutputTokens: 100,
     temperature: 0,
     topP: 0.95,
   },
@@ -88,9 +89,13 @@ export async function labelTextWithVertexAi(text, doWait = true) {
 
   try {
     label = result.response.candidates[0].content.parts[0].text;
+
+    if (label.length > 20) {
+      console.log("Invalid label:", label);
+    }
   } catch (error) {
     console.log("Vertex AI response:");
-    console.log(result, { depth: null });
+    console.log(util.inspect(result, { depth: null, colors: true }));
     throw error;
   }
 
