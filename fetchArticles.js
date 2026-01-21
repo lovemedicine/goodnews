@@ -21,7 +21,10 @@ const feedUrls = [
     "Wall Street Journal",
     "https://feeds.content.dowjones.io/public/rss/WSJcomUSBusiness",
   ],
-
+  [
+    "Wall Street Journal",
+    "https://feeds.content.dowjones.io/public/rss/RSSMarketsMain"
+  ],
   ["Los Angeles Times", "https://www.latimes.com/world-nation/rss2.0.xml"],
   ["New York Times", "https://rss.nytimes.com/services/xml/rss/nyt/World.xml"],
   ["New York Times", "https://rss.nytimes.com/services/xml/rss/nyt/US.xml"],
@@ -37,6 +40,7 @@ const feedUrls = [
   ["Washington Post", "https://feeds.washingtonpost.com/rss/national"],
   ["The Guardian", "https://www.theguardian.com/us-news/rss"],
   ["The Guardian", "https://www.theguardian.com/world/rss"],
+  ["The Guardian", "https://www.theguardian.com/us/business/rss"],
   ["Bloomberg", "https://feeds.bloomberg.com/markets/news.rss"],
   ["Bloomberg", "https://feeds.bloomberg.com/politics/news.rss"],
   ["NPR", "https://feeds.npr.org/1002/rss.xml"],

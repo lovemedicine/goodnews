@@ -22,6 +22,7 @@ reassuring:
 "Some Kansas Republicans Resist Redistricting Efforts Amid Growing Skepticism. The state’s top Republicans wanted to join President Trump’s push to redraw congressional maps. But plans for a special session fell apart when some lawmakers resisted." - setback for Trump and feuding between Republicans
 "Health Rounds: Shingles vaccine reduces risk of death from dementia, study finds" - public health breakthrough that benefits everyone
 "At Art Basel, Elon Musk, Andy Warhol and Jeff Bezos are reimagined as robotic, picture-pooping dogs | CNN" - it's reassuring that greedy tech oligarchs are being lampooned in a high profile setting
+"Global Stocks Trounce the S&P 500 in Trump’s Chaotic First Year. It's been one year since President Trump took the oath of office and Wall Street has responded. Norah Mulinda explains" - weak stock market puts pressure Trump to abandon most destructive policies
 
 stressful:
 "Trump administration planning to allow oil and gas drilling off California coast. Plan, which Gavin Newsom, the governor, has said would be ‘dead on arrival’, will allow six lease sales from 2027 to 2030" - any Trump plan is bad for leftists, and oil drilling is especially bad
@@ -115,6 +116,13 @@ Headlines:
 Answer: 2
 
 Headlines:
+1: The Philippines tests ‘transition credits’ to cut coal use in novel experiment
+2: Australia's Bupa fined $23.3 million for misleading health insurance customers
+3: Europe’s Coal Mining Holdout Braces for Its Inevitable Demise
+4: Cincinnati approves $8.1 million settlement with protesters arrested in 2020
+Answer: 0
+
+Headlines:
 1: Florida lawmakers urge Trump to reject drilling off state's western coast
 2: CPS reports 2% increase in measles vaccination rate
 3: West Contra Costa school staff strike for second day as union says no progress made in negotiations
@@ -142,6 +150,14 @@ Headlines:
 3. Waymo will recall software after its self-driving cars passed stopped school buses
 4. Judge rejects Trump administration's bid to toss lawsuit challenging Guantánamo migrant detentions
 5. San Diego considers $30 million settlement in police-involved shooting death of Black teen
+Answer: 0
+
+Headlines:
+1: Wildlife group sues to remove Trump photo from 2026 national parks pass
+2: EU trims exclusivity window for new drugs
+3: China leads objections to Trump carve-out on global minimum tax
+4: Trump administration unlawfully canceled disaster prevention program, US judge rules
+5: With Republicans Divided, Indiana Senate Set to Vote on Redistricting
 Answer: 0
 `;
 
