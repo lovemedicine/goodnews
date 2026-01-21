@@ -90,7 +90,7 @@ export async function labelTextWithVertexAi(text, doWait = true) {
     label = result.response.candidates[0].content.parts[0].text;
   } catch (error) {
     console.log("Vertex AI response:");
-    console.log(result);
+    console.log(result, { depth: null });
     throw error;
   }
 
