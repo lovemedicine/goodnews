@@ -84,9 +84,14 @@ async function wait() {
 export async function labelTextWithVertexAi(text, doWait = true) {
   if (doWait) await wait();
   const result = await chat.sendMessage(text);
-  return result.response.candidates[0].content.parts[0].text
-    .trim()
-    .toLowerCase();
+  let text = result.response.candidates[0].content?.parts[0].text;
+
+  if (!text) {
+    console.log(result);
+    throw new Error("Unexpected Vertext AI response");
+  }
+
+  return text.trim().toLowerCase();
 }
 
 export async function matchTextWithVertexAi(text, doWait = true) {
