@@ -91,15 +91,17 @@ export async function labelTextWithVertexAi(text, doWait = true) {
     label = result.response.candidates[0].content.parts[0].text;
 
     if (label.length > 20) {
-      console.log("Invalid label:", label);
+      console.log();
+      throw Error(`Invalid label: ${label}`);
     }
+
+    return label.trim().toLowerCase();
   } catch (error) {
+    console.log(error);
     console.log("Vertex AI response:");
     console.log(util.inspect(result, { depth: null, colors: true }));
-    throw error;
+    return null;
   }
-
-  return label.trim().toLowerCase();
 }
 
 export async function matchTextWithVertexAi(text, doWait = true) {

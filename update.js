@@ -141,7 +141,8 @@ for (let i = 0; i < feeds.length; i++) {
         console.log(text);
         article.label = standardizeLabel(await labelingFn(text));
       }
-      await saveArticle(article);
+
+      if (article.label) await saveArticle(article);
       console.log(article.label);
     }
   }
