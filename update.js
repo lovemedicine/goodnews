@@ -139,7 +139,8 @@ for (let i = 0; i < feeds.length; i++) {
       } else {
         const text = getTextForLabeling(article);
         console.log(text);
-        article.label = standardizeLabel(await labelingFn(text));
+        const label = await labelingFn(text);
+        article.label = label ? standardizeLabel(label) : null;
       }
 
       if (article.label) await saveArticle(article);
