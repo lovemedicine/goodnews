@@ -19,7 +19,7 @@ const model =
 const generativeModel = vertex_ai.preview.getGenerativeModel({
   model: model,
   generationConfig: {
-    maxOutputTokens: 5,
+    maxOutputTokens: 100,
     temperature: 0,
     topP: 0.95,
   },
