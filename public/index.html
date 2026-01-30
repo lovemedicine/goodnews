@@ -111,7 +111,7 @@
         status.textContent = "";
         status.className = "saved";
         try {
-          const res = await fetch("/api/articles", {
+          const res = await fetch("api/articles", {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ id: article.id, human_label: value }),
@@ -149,7 +149,7 @@
       const content = document.getElementById("content");
       content.innerHTML = "<p class=\"loading\">Loading…</p>";
 
-      const res = await fetch(`/api/articles?page=${page}&limit=100`);
+      const res = await fetch(`api/articles?page=${page}&limit=100`);
       if (!res.ok) {
         content.innerHTML = `<p class="error">Failed to load articles</p>`;
         return;
