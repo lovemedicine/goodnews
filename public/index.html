@@ -49,9 +49,13 @@
       const articleEl = document.createElement("article");
       articleEl.dataset.id = article.id;
 
+      const link = document.createElement("a");
+      link.href = article.url;
+      link.target = "_blank";
       const title = document.createElement("h2");
       title.textContent = article.title;
-      articleEl.appendChild(title);
+      link.appendChild(title);
+      articleEl.appendChild(link);
 
       const feed = document.createElement("p");
       feed.className = "feed";
@@ -107,7 +111,7 @@
         status.textContent = "";
         status.className = "saved";
         try {
-          const res = await fetch("api/articles", {
+          const res = await fetch("/api/articles", {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ id: article.id, human_label: value }),
@@ -145,7 +149,7 @@
       const content = document.getElementById("content");
       content.innerHTML = "<p class=\"loading\">Loading…</p>";
 
-      const res = await fetch(`api/articles?page=${page}&limit=100`);
+      const res = await fetch(`/api/articles?page=${page}&limit=100`);
       if (!res.ok) {
         content.innerHTML = `<p class="error">Failed to load articles</p>`;
         return;
