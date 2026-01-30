@@ -39,13 +39,15 @@ function basicAuth(req, res, next) {
 }
 
 const app = express();
-app.use(express.json());
-app.use(basicAuth);
-app.use(express.static("public"));
+const admin = express.Router();
+
+admin.use(express.json());
+admin.use(basicAuth);
+admin.use(express.static("public"));
 
 const PAGE_SIZE = 100;
 
-app.get("/api/articles", async (req, res) => {
+admin.get("/api/articles", async (req, res) => {
   try {
     const page = Math.max(1, parseInt(req.query.page, 10) || 1);
     const limit = Math.min(100, Math.max(1, parseInt(req.query.limit, 10) || PAGE_SIZE));
@@ -122,7 +124,7 @@ app.get("/api/articles", async (req, res) => {
   }
 });
 
-app.patch("/api/articles", async (req, res) => {
+admin.patch("/api/articles", async (req, res) => {
   const { id, ids, human_label } = req.body;
 
   if (human_label === undefined) {
@@ -155,5 +157,7 @@ app.patch("/api/articles", async (req, res) => {
   }
 });
 
+app.use("/admin", admin);
+
 const port = process.env.PORT ?? 3000;
-app.listen(port, () => console.log(`Server listening on http://localhost:${port}`));
+app.listen(port, () => console.log(`Server listening on http://localhost:${port}/admin/`));
