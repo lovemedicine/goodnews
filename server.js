@@ -8,8 +8,39 @@ function isValidHumanLabel(value) {
   return value === null || value === "" || HUMAN_LABELS.includes(value);
 }
 
+const AUTH_USER = process.env.AUTH_USER;
+const AUTH_PASS = process.env.AUTH_PASS;
+
+function basicAuth(req, res, next) {
+  if (!AUTH_USER || !AUTH_PASS) {
+    return next();
+  }
+  const auth = req.headers.authorization;
+  if (!auth || !auth.startsWith("Basic ")) {
+    res.setHeader("WWW-Authenticate", 'Basic realm="Labeling"');
+    return res.status(401).send("Authentication required");
+  }
+  const encoded = auth.slice(6);
+  let decoded;
+  try {
+    decoded = Buffer.from(encoded, "base64").toString("utf-8");
+  } catch {
+    res.setHeader("WWW-Authenticate", 'Basic realm="Labeling"');
+    return res.status(401).send("Authentication required");
+  }
+  const i = decoded.indexOf(":");
+  const user = i === -1 ? decoded : decoded.slice(0, i);
+  const pass = i === -1 ? "" : decoded.slice(i + 1);
+  if (user !== AUTH_USER || pass !== AUTH_PASS) {
+    res.setHeader("WWW-Authenticate", 'Basic realm="Labeling"');
+    return res.status(401).send("Authentication required");
+  }
+  next();
+}
+
 const app = express();
 app.use(express.json());
+app.use(basicAuth);
 app.use(express.static("public"));
 
 const PAGE_SIZE = 100;
