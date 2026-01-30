@@ -1,4 +1,5 @@
 import express from "express";
+import { Op } from "sequelize";
 import { Article, Feed } from "./db.js";
 
 const HUMAN_LABELS = ["good", "bad", "neutral", "opinion", "essential", "other"];
@@ -9,11 +10,55 @@ function isValidHumanLabel(value) {
 
 const app = express();
 app.use(express.json());
+app.use(express.static("public"));
+
+const PAGE_SIZE = 100;
 
 app.get("/api/articles", async (req, res) => {
   try {
-    const articles = await Article.findAll({
+    const page = Math.max(1, parseInt(req.query.page, 10) || 1);
+    const limit = Math.min(100, Math.max(1, parseInt(req.query.limit, 10) || PAGE_SIZE));
+    const offset = (page - 1) * limit;
+
+    const { label, human_label, feed_name, published_after, published_before } =
+      req.query;
+
+    const where = {};
+
+    if (label !== undefined && label !== null) {
+      where.label = label === "" ? null : label;
+    }
+    if (human_label !== undefined && human_label !== null) {
+      where.human_label = human_label === "" ? null : human_label;
+    }
+    if (published_after != null && published_after !== "") {
+      const t = new Date(published_after);
+      if (!Number.isNaN(t.getTime())) {
+        where.published_at = { ...where.published_at, [Op.gte]: t };
+      }
+    }
+    if (published_before != null && published_before !== "") {
+      const t = new Date(published_before);
+      if (!Number.isNaN(t.getTime())) {
+        where.published_at = { ...where.published_at, [Op.lte]: t };
+      }
+    }
+
+    const include = [
+      {
+        model: Feed,
+        attributes: ["name"],
+        ...(feed_name != null && feed_name !== ""
+          ? { where: { name: feed_name }, required: true }
+          : {}),
+      },
+    ];
+
+    const { count, rows: articles } = await Article.findAndCountAll({
+      where,
       order: [["published_at", "DESC"]],
+      limit,
+      offset,
       attributes: [
         "id",
         "url",
@@ -25,13 +70,21 @@ app.get("/api/articles", async (req, res) => {
         "published_at",
         "parent_id",
       ],
-      include: [{ model: Feed, attributes: ["name"] }],
+      include,
     });
+
     const payload = articles.map((a) => {
       const { Feed: feed, ...rest } = a.toJSON();
       return { ...rest, feed_name: feed?.name };
     });
-    res.json(payload);
+
+    res.json({
+      articles: payload,
+      total: count,
+      page,
+      limit,
+      total_pages: Math.ceil(count / limit),
+    });
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Failed to fetch articles" });
