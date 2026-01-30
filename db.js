@@ -50,6 +50,10 @@ export const Article = sequelize.define(
       type: DataTypes.STRING,
       allowNull: true,
     },
+    human_label: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     published_at: {
       type: DataTypes.DATE,
       allowNull: false,

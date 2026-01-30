@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "migrate": "node migrate.js",
     "update": "node update.js",
     "generate": "node generate.js",
     "illustrate": "node generateImages.js",
@@ -20,6 +21,7 @@
     "rss-parser": "^3.13.0",
     "sequelize": "^6.37.5",
     "sqlite3": "^5.1.7",
-    "tldjs": "^2.3.1"
+    "tldjs": "^2.3.1",
+    "umzug": "^3.8.2"
   }
 }

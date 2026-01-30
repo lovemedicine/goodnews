@@ -1,1 +1,2 @@
 -- [2025-04-08] ALTER TABLE articles ADD COLUMN parent_id INTEGER;
+-- [2026-01-30] ALTER TABLE articles ADD COLUMN human_label VARCHAR(255);
