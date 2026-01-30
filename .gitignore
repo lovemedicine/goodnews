@@ -1,6 +1,6 @@
 .env
 node_modules
-goodnews.db
+goodnews*.db
 notes
 feeds/*
 tuning/*.jsonl

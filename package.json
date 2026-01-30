@@ -1,10 +1,12 @@
 {
   "scripts": {
+    "server": "node server.js",
     "migrate": "node migrate.js",
     "update": "node update.js",
     "generate": "node generate.js",
     "illustrate": "node generateImages.js",
-    "backup": "scp ubuntu@welcome.news:/var/www/goodnews/goodnews.db \"backups/goodnews-$(date +%Y%m%d_%H%M%S).db\""
+    "backup": "scp ubuntu@welcome.news:/var/www/goodnews/goodnews.db \"backups/goodnews-$(date +%Y%m%d_%H%M%S).db\"",
+    "pull-db": "./pull-db.sh"
   },
   "type": "module",
   "dependencies": {
@@ -15,6 +17,7 @@
     "csv-stringify": "^6.5.2",
     "dot": "^1.1.3",
     "dotenv": "^16.4.7",
+    "express": "^5.2.1",
     "html-to-text": "^9.0.5",
     "ollama": "^0.5.13",
     "rss": "^1.2.2",
