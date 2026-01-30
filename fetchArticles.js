@@ -64,6 +64,8 @@ const feedUrls = [
   ["Chicago Tribune", "https://www.chicagotribune.com/feed/"],
   ["San Jose Mercury News", "https://www.mercurynews.com/news/feed/"],
   ["Jacobin", "https://jacobin.com/feed"],
+  ["The Verge", "https://www.theverge.com/rss/index.xml"],
+  ["Current Affairs", "https://www.currentaffairs.org/news/rss.xml"],
   // ["Le Monde", "https://www.lemonde.fr/en/rss/une.xml"],
   // ["Irish Times", "https://www.irishtimes.com/arc/outboundfeeds/feed-world/"],
   // ["Der Spiegel", "https://www.spiegel.de/international/index.rss"],

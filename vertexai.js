@@ -19,7 +19,7 @@ const model =
 const generativeModel = vertex_ai.preview.getGenerativeModel({
   model: model,
   generationConfig: {
-    maxOutputTokens: 100,
+    maxOutputTokens: 200,
     temperature: 0,
     topP: 0.95,
   },
@@ -48,7 +48,7 @@ const generativeModel = vertex_ai.preview.getGenerativeModel({
 const matchingModel = vertex_ai.preview.getGenerativeModel({
   model: "gemini-2.0-flash-001",
   generationConfig: {
-    maxOutputTokens: 100,
+    maxOutputTokens: 200,
     temperature: 0,
     topP: 0.95,
   },
@@ -84,7 +84,15 @@ async function wait() {
 
 export async function labelTextWithVertexAi(text, doWait = true) {
   if (doWait) await wait();
-  const result = await chat.sendMessage(text);
+
+  let result;
+
+  try {
+    result = await chat.sendMessage(text);
+  } catch (error) {
+    console.log(text);
+  }
+
   let label;
 
   try {
