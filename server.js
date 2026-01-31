@@ -56,11 +56,15 @@ app.get("/api/articles", async (req, res) => {
 
     const where = {};
 
-    if (label !== undefined && label !== null) {
-      where.label = label === "" ? null : label;
+    const labels = [].concat(label ?? []).filter((l) => l !== undefined && l !== null);
+    if (labels.length > 0) {
+      const values = labels.map((l) => (l === "" ? null : l));
+      where.label = values.length === 1 ? values[0] : { [Op.in]: values };
     }
-    if (human_label !== undefined && human_label !== null) {
-      where.human_label = human_label === "" ? null : human_label;
+    const humanLabels = [].concat(human_label ?? []).filter((l) => l !== undefined && l !== null);
+    if (humanLabels.length > 0) {
+      const values = humanLabels.map((l) => (l === "" ? null : l));
+      where.human_label = values.length === 1 ? values[0] : { [Op.in]: values };
     }
     if (published_after != null && published_after !== "") {
       const t = new Date(published_after);

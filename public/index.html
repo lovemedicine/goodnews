@@ -20,12 +20,16 @@
     .human-btns { display: inline-flex; align-items: center; gap: 0.25rem; flex-wrap: wrap; }
     .saved { color: #0a0; font-size: 0.75rem; margin-left: 0.5rem; }
     .error { color: #c00; font-size: 0.75rem; margin-left: 0.5rem; }
+    .filters { margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #ddd; }
+    .filters label { margin-right: 0.75rem; font-size: 0.875rem; cursor: pointer; }
+    .filter-row { margin-bottom: 0.5rem; }
     nav { margin-top: 1rem; display: flex; gap: 1rem; align-items: center; }
     nav button { padding: 0.25rem 0.5rem; }
     .loading { color: #666; }
   </style>
 </head>
 <body>
+  <div class="filters" id="filters"></div>
   <main id="content">
     <p class="loading">Loading…</p>
   </main>
@@ -38,6 +42,54 @@
   <script>
     const HUMAN_LABELS = ["good", "bad", "neutral", "opinion", "essential", "other"];
     let currentPage = 1;
+
+    function buildFilterRow(prefix, allId, checkboxClass, onChange) {
+      const row = document.createElement("div");
+      row.className = "filter-row";
+      row.appendChild(document.createTextNode(`${prefix} `));
+      const allLabel = document.createElement("label");
+      allLabel.innerHTML = `<input type="checkbox" id="${allId}"> all `;
+      row.appendChild(allLabel);
+      HUMAN_LABELS.forEach((opt) => {
+        const label = document.createElement("label");
+        label.innerHTML = `<input type="checkbox" class="${checkboxClass}" value="${opt}"> ${opt} `;
+        row.appendChild(label);
+      });
+      const unsetLabel = document.createElement("label");
+      unsetLabel.innerHTML = `<input type="checkbox" class="${checkboxClass}" value=""> unset `;
+      row.appendChild(unsetLabel);
+      const allCb = row.querySelector(`#${allId}`);
+      const filterCbs = row.querySelectorAll(`.${checkboxClass}`);
+      allCb.checked = true;
+      allCb.addEventListener("change", () => {
+        filterCbs.forEach((cb) => { cb.checked = allCb.checked; });
+        onChange();
+      });
+      filterCbs.forEach((cb) => {
+        cb.addEventListener("change", () => {
+          allCb.checked = [...filterCbs].every((c) => c.checked);
+          onChange();
+        });
+      });
+      return row;
+    }
+
+    function buildFilterCheckboxes() {
+      const container = document.getElementById("filters");
+      container.innerHTML = "";
+      container.appendChild(buildFilterRow("Filter by AI label:", "filter-label-all", "filter-label", () => loadPage(1)));
+      container.appendChild(buildFilterRow("Filter by Human label:", "filter-human-all", "filter-human", () => loadPage(1)));
+    }
+
+    function getSelectedLabels() {
+      if (document.getElementById("filter-label-all")?.checked) return [];
+      return [...document.querySelectorAll(".filter-label:checked")].map((cb) => cb.value);
+    }
+
+    function getSelectedHumanLabels() {
+      if (document.getElementById("filter-human-all")?.checked) return [];
+      return [...document.querySelectorAll(".filter-human:checked")].map((cb) => cb.value);
+    }
 
     function stripHtml(html) {
       const div = document.createElement("div");
@@ -111,7 +163,7 @@
         status.textContent = "";
         status.className = "saved";
         try {
-          const res = await fetch("api/articles", {
+          const res = await fetch("/api/articles", {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ id: article.id, human_label: value }),
@@ -149,7 +201,12 @@
       const content = document.getElementById("content");
       content.innerHTML = "<p class=\"loading\">Loading…</p>";
 
-      const res = await fetch(`api/articles?page=${page}&limit=100`);
+      const labels = getSelectedLabels();
+      const humanLabels = getSelectedHumanLabels();
+      const params = new URLSearchParams({ page, limit: 100 });
+      labels.forEach((l) => params.append("label", l));
+      humanLabels.forEach((l) => params.append("human_label", l));
+      const res = await fetch(`/api/articles?${params}`);
       if (!res.ok) {
         content.innerHTML = `<p class="error">Failed to load articles</p>`;
         return;
@@ -171,6 +228,7 @@
     document.getElementById("prev").addEventListener("click", () => loadPage(currentPage - 1));
     document.getElementById("next").addEventListener("click", () => loadPage(currentPage + 1));
 
+    buildFilterCheckboxes();
     loadPage(1);
   </script>
 </body>
