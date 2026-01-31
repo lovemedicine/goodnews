@@ -163,7 +163,8 @@
         status.textContent = "";
         status.className = "saved";
         try {
-          const res = await fetch("/api/articles", {
+          // Path should be relative to the current page in case the page isn't served from the root
+          const res = await fetch("api/articles", {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ id: article.id, human_label: value }),
@@ -206,7 +207,8 @@
       const params = new URLSearchParams({ page, limit: 100 });
       labels.forEach((l) => params.append("label", l));
       humanLabels.forEach((l) => params.append("human_label", l));
-      const res = await fetch(`/api/articles?${params}`);
+      // Path should be relative to the current page in case the page isn't served from the root
+      const res = await fetch(`api/articles?${params}`);
       if (!res.ok) {
         content.innerHTML = `<p class="error">Failed to load articles</p>`;
         return;
