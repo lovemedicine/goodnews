@@ -43,7 +43,7 @@
     const HUMAN_LABELS = ["good", "bad", "neutral", "opinion", "essential", "other"];
     let currentPage = 1;
 
-    function buildFilterRow(prefix, allId, checkboxClass, onChange) {
+    function buildFilterRow(prefix, allId, checkboxClass, onChange, defaultValues = null) {
       const row = document.createElement("div");
       row.className = "filter-row";
       row.appendChild(document.createTextNode(`${prefix} `));
@@ -60,7 +60,9 @@
       row.appendChild(unsetLabel);
       const allCb = row.querySelector(`#${allId}`);
       const filterCbs = row.querySelectorAll(`.${checkboxClass}`);
-      allCb.checked = true;
+      const useDefaults = defaultValues != null && defaultValues.length > 0;
+      allCb.checked = !useDefaults;
+      filterCbs.forEach((cb) => { cb.checked = useDefaults ? defaultValues.includes(cb.value) : true; });
       allCb.addEventListener("change", () => {
         filterCbs.forEach((cb) => { cb.checked = allCb.checked; });
         onChange();
@@ -77,8 +79,8 @@
     function buildFilterCheckboxes() {
       const container = document.getElementById("filters");
       container.innerHTML = "";
-      container.appendChild(buildFilterRow("Filter by AI label:", "filter-label-all", "filter-label", () => loadPage(1)));
-      container.appendChild(buildFilterRow("Filter by Human label:", "filter-human-all", "filter-human", () => loadPage(1)));
+      container.appendChild(buildFilterRow("Filter by AI label:", "filter-label-all", "filter-label", () => loadPage(1), ["good"]));
+      container.appendChild(buildFilterRow("Filter by Human label:", "filter-human-all", "filter-human", () => loadPage(1), [""]));
     }
 
     function getSelectedLabels() {
