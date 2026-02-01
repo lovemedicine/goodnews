@@ -3,14 +3,18 @@ import RSS from "rss";
 import { Op } from "sequelize";
 import { Article, Feed } from "./db.js";
 
-export async function loadArticles(labels, humanLabels, limit = 20) {
+export async function loadArticles(labels, limit = 20) {
   const oneDayAgo = new Date(new Date() - 24 * 60 * 60 * 1000);
-  const where = { label: labels, published_at: { [Op.gt]: oneDayAgo } };
-  if (humanLabels?.length && humanLabels.length > 0) {
-    where.human_label = { [Op.in]: humanLabels };
-  }
   return await Article.findAll({
-    where,
+    where: {
+      [Op.and]: {
+        published_at: { [Op.gt]: oneDayAgo },
+        [Op.or]: [
+          { human_label: labels },
+          { label: labels, human_label: null},
+        ]
+      }
+    },
     order: [["published_at", "DESC"]],
     limit,
     include: Feed,
@@ -30,8 +34,8 @@ export function urlForArticle(article) {
     : article.url;
 }
 
-export async function generateFeed(name, labels, humanLabels) {
-  const articles = await loadArticles(labels, humanLabels);
+export async function generateFeed(name, labels) {
+  const articles = await loadArticles(labels);
   const lastPublishedAt = articles.reduce(
     (last, article) =>
       article.published_at > last ? article.published_at : last,
