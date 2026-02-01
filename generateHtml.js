@@ -17,9 +17,9 @@ function getUpdatedAt() {
   return `${timeParts[0]}, ${timeParts[1]} at ${timeParts[2]} Eastern`;
 }
 
-export async function generateHtml(title, labels, filename) {
+export async function generateHtml(title, labels, humanLabels, filename) {
   const template = fs.readFileSync("html-template.txt");
-  const allArticles = await loadArticles(labels, null);
+  const allArticles = await loadArticles(labels, humanLabels, null);
   const childArticles = allArticles.filter((article) =>
     Boolean(article.parent_id)
   );
